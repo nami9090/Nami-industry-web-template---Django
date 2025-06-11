@@ -1,2 +1,2 @@
-# Nami industry web template | Djaong
+# Nami industry web template | Django
 The web site of Nami industry company
