@@ -1,0 +1,6 @@
+<a href="/">back</a>
+{% comment %} <h1>welcome to counter page</h1>
+<h2>the word count are: {{ amount }} </h2> {% endcomment %}
+{% for post in posts %}
+<h1><a href="{% url 'post' post %}" >Post</a><h1>
+{% endfor %}
