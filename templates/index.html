@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>N.I - Industry</title>
+  <title>NAFUV</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -46,7 +46,7 @@
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!--<img src="{% static 'assets/img/logo.webp' %}" alt="">-->
         <!--<img src="{% static 'assets/nami_img/logo.png' %}" alt="">-->
-        <h1 class="sitename">Nami industry</h1>
+        <h1 class="sitename">NAFUV</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
@@ -74,11 +74,11 @@
             </ul>
           </li>-->
           <li><a href="#contact">Contact</a></li>
-          {% if user.is_authenticated %}
+          <!--{% if user.is_authenticated %}
           <li><a href="logout">logout or signup</a></li>
           {% else %}
           <li><a href="login">login</a></li>
-          {% endif %}
+          {% endif %}-->
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -101,16 +101,18 @@
           <div class="col-lg-7 content-col" data-aos="fade-up">
             <div class="content">
               <div class="agency-name">
-                <h5>OUR AGENCY</h5>
+                <h5>OUR PLATFORM</h5>
               </div>
               <div class="main-heading">
-                <h1>CREATIVE <br>DESIGN</h1>
+                <h1>NORTH AMERICAN<br>FULIRU-VIRA MUSEUM</h1>
               </div>
 
               <div class="divider"></div>
 
               <div class="description">
-                <p>Discover innovative strategies for impactful visual communication. We transform ideas into compelling realities, ensuring your brand stands out in a crowded marketplace. Our dedicated team leverages cutting-edge techniques to deliver exceptional results that resonate with your audience.</p>
+                <p>
+                  Inspiring younger Benebuvira generation through the power of cultural artifacts. The NAFV museum thrives to enriche the Benebuvira community around the world by collecting, preserving, and making accessible outstanding works of art from the Fuliiru and Vira cultures.
+                </p>
               </div>
 
               <div class="cta-button">
@@ -126,7 +128,7 @@
             <div class="visual-content">
               <div class="fluid-shape">
                 <!--<img src="{% static 'assets/img/abstract/abstract-1.webp'%}" alt="Abstract Fluid Shape" class="fluid-img">-->
-                <img src="{% static 'assets/nami_img/logo.png'%}" alt="Abstract Fluid Shape" class="fluid-img">
+                <img src="{% static 'assets/nami_img/logo1.png'%}" alt="Abstract Fluid Shape" class="fluid-img">
               </div>
 
               <div class="stats-card">
@@ -134,7 +136,7 @@
                   <h2>5K</h2>
                 </div>
                 <div class="stats-label">
-                  <p>Successful Campaigns</p>
+                  <p>People Satisfied</p>
                 </div>
                 <div class="stats-arrow">
                   <a href="#portfolio"><i class="bi bi-arrow-up-right"></i></a>
@@ -160,26 +162,29 @@
         <div class="row gx-5 align-items-center">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
             <div class="about-image position-relative">
-              <img src="{% static 'assets/img/about/about-portrait-1.webp' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
+              <!--<img src="{% static 'assets/img/about/about-portrait-1.webp' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">-->
+              <img src="{% static 'assets/nami_img/about_pic.jpg' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
               <div class="experience-badge">
-                <span class="years">20+</span>
-                <span class="text">Years of Expertise</span>
+                <span class="years">5+</span>
+                <span class="text">Years of Working</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
             <div class="about-content">
-              <h2>Elevating Business Performance Through Innovation</h2>
-              <p class="lead">We focus on crafting bespoke strategies that navigate complexity and deliver tangible results for our clients.</p>
-              <p>Through a blend of sophisticated analytics and creative problem-solving, we empower organizations to thrive in rapidly evolving markets.</p>
+              <h2>Background</h2>
+              <p class="lead">The migrations of people from Uvira land which comprise the ancestral kingdoms of Fuliiru and Vira people to North America for the past three decades has left a cultural vacuum in the minds of one generation of young men and women. There is an attempt to affirm that this vacuum goes two generations back based on life experiences both in Canada and the USA. </p>
+              <p>The recent Canadians and Americans of Fuliiru-Vira ascendance , not only are losing the taste of their ancestral languages and traditions, they are also loosing trace of their artifacts, Proverbs, arts and sculptures inherited from their forefathers. In addition to this cultural change, indifference and ignorance, those who tried to lift up the banner through education, history telling and public services are even absent in the memories of today generations. NAFV INT. is dedicated to collect, protect and preserve these cultural writings, objects, photographs, audio and recordings, artworks and other social customs.</p>
 
               <div class="row g-4 mt-3">
                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400">
                   <div class="feature-item">
                     <i class="bi bi-check-circle-fill"></i>
-                    <h5>Dedicated Team Support</h5>
-                    <p>Our highly skilled professionals are committed to providing personalized service and impactful solutions on every engagement.</p>
+                    <h5>A Duty of Solidarity</h5>
+                    <p>Support orphans. Give hope. Change a life. Donate, volunteer, or share today.
+                      <br/><br/>
+                      #SupportOrphans #GiveHope #TogetherForChildren</p>
                   </div>
                 </div>
                 <div class="col-md-6" data-aos="zoom-in" data-aos-delay="450">
@@ -191,7 +196,7 @@
                 </div>
               </div>
 
-              <a href="#" class="btn btn-primary mt-4">Explore Our Services</a>
+              <a href="#services" class="btn btn-primary mt-4">Explore Our Services</a>
             </div>
           </div>
         </div>
@@ -200,8 +205,13 @@
           <div class="row">
             <div class="col-lg-4" data-aos="fade-right" data-aos-delay="200">
               <div class="testimonial-intro">
-                <h3>Our Clients Speak Highly</h3>
-                <p>Hear directly from those who have experienced the impact of our partnership and achieved their strategic goals.</p>
+                <h3>More about our culture</h3>
+                <p>
+                  Rooted in wisdom, rich in culture.
+                  From stories to rituals, Africa’s traditions connect generations and keep identity alive.
+                  <br/><br/>
+                  #AfricanHeritage #CulturalRoots #ProudlyAfrican
+                </p>
                 <div class="swiper-nav-buttons mt-4">
                   <button class="slider-prev"><i class="bi bi-arrow-left"></i></button>
                   <button class="slider-next"><i class="bi bi-arrow-right"></i></button>
@@ -241,12 +251,12 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                       </div>
-                      <p>"Their strategic vision and unwavering commitment to results provided exceptional value. Our operational efficiency has signficantly improved."</p>
+                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and are mainly farmers. Their culture is rich in traditions. Despite conflicts, they remain proud of their identity."</p>
                       <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/img/person/person-f-1.webp' %} " class="client-img" alt="Client" loading="lazy">
+                        <img src="{% static 'assets/nami_img/cesar.jpg' %} " class="client-img" alt="Client" loading="lazy">
                         <div>
-                          <h6 class="mb-0">Eleanor Vance</h6>
-                          <span>Operations Manager</span>
+                          <h6 class="mb-0">Muholeza Cesar Ligogo</h6>
+                          <span>Co-founder</span>
                         </div>
                       </div>
                     </div>
@@ -261,18 +271,38 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-half"></i>
                       </div>
-                      <p>"Collaborating with their team was a revelation. Their innovative strategies guided us toward achieving our objectives with precision and speed."</p>
+                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and farm to live. They value family, traditions, and leadership. Despite difficulties, they stay connected to their culture."</p>
                       <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/img/person/person-m-1.webp'%} " class="client-img" alt="Client" loading="lazy">
+                        <img src="{% static 'assets/nami_img/Kapapi.png'%} " class="client-img" alt="Client" loading="lazy">
                         <div>
-                          <h6 class="mb-0">David Kim</h6>
-                          <span>Product Lead</span>
+                          <h6 class="mb-0">John Kapapi</h6>
+                          <span>Founder</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div class="swiper-slide">
+                    <div class="testimonial-item">
+                      <div class="rating mb-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                      </div>
+                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and farm to live. They value family, traditions, and leadership. Despite difficulties, they stay connected to their culture."</p>
+                      <div class="client-info d-flex align-items-center mt-4">
+                        <img src="{% static 'assets/nami_img/logo.png'%} " class="client-img" alt="Client" loading="lazy">
+                        <div>
+                          <h6 class="mb-0">Anonymous</h6>
+                          <span>Daf</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!--<div class="swiper-slide">
                     <div class="testimonial-item">
                       <div class="rating mb-3">
                         <i class="bi bi-star-fill"></i>
@@ -290,9 +320,9 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
 
-                  <div class="swiper-slide">
+                  <!--<div class="swiper-slide">
                     <div class="testimonial-item">
                       <div class="rating mb-3">
                         <i class="bi bi-star-fill"></i>
@@ -310,7 +340,7 @@
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </div>-->
 
                 </div>
               </div>
@@ -346,7 +376,8 @@
             <div class="col-lg-4 col-md-12">
               <div class="service-summary">
                 <p>
-                  We integrate forward-thinking strategies, creative approaches, and state-of-the-art technologies to deliver exceptional customer experiences that drive growth and engage target markets.
+                  The primary activities of the NAFV Into consists of a virtual museum and a physical cultural museum in Uvira in the Democratic Republic of the Congo.
+                  The virtual museum on the website virtually preserves culture of the Fuliiru and Vira peoples for the purpose of online education and research. Also the virtual museum is a source of experiment for young generations encouraged to put their hands on the plight during our yearly exhibition at the headquarter.
                 </p>
                 <a href="services.html" class="service-btn">
                   View All Services
@@ -358,7 +389,7 @@
         </div>
         {% comment %} SERVICE START HERE {% endcomment %}
         <div class="row justify-content-center">
-          {% for feature in features %}
+          <!--{% for feature in features %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
@@ -369,7 +400,6 @@
               </a>
               <h3>
                 <a href="service-details">
-                  <!-- Creative <span>branding</span> -->
                    {{ feature.name }}
                 </a>
               </h3>
@@ -378,8 +408,8 @@
               </p>
             </div>
           </div>
-          {% endfor %}
-          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          {% endfor %}-->
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="bi bi-gem"></i>
@@ -397,8 +427,8 @@
                 {{ feature2.details }}
               </p>
             </div>
-          </div> {% endcomment %}
-          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="bi bi-megaphone"></i>
@@ -416,8 +446,8 @@
                 {{ feature3.details }}
               </p>
             </div>
-          </div> {% endcomment %}
-          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="bi bi-code-slash"></i>
@@ -435,8 +465,8 @@
                 {{ feature4.details }}
               </p>
             </div>
-          </div> {% endcomment %}
-          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="bi bi-graph-up"></i>
@@ -454,8 +484,8 @@
                 {{ feature5.details }}
               </p>
             </div>
-          </div> {% endcomment %}
-          {% comment %} <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          </div>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="bi bi-camera-video"></i>
@@ -473,7 +503,7 @@
                 {{ feature6.details }}
               </p>
             </div>
-          </div> {% endcomment %}
+          </div>
         </div>
 
       </div>
@@ -500,8 +530,10 @@
               </div>
               <div class="step-info">
                 <span class="step-number">Step 01</span>
-                <h3>Initial Consultation</h3>
-                <p>Conducting thorough discovery sessions to understand your business requirements and objectives. Our expert team analyzes your needs to create a customized approach.</p>
+                <h3>Mission</h3>
+                <p>
+                  As described above, the NAFV Into. will pursue the mission of collecting, protecting, preserving and educating its members and the communities about the items inherited and the importance of learning about cultures and people, lifestyle and practices of the past so they can understand the future.
+                </p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -513,8 +545,11 @@
               </div>
               <div class="step-info">
                 <span class="step-number">Step 02</span>
-                <h3>Planning &amp; Strategy</h3>
-                <p>Developing comprehensive strategies and detailed project plans based on the initial consultation. We create actionable roadmaps with clear milestones and deliverables.</p>
+                <h3>Activities</h3>
+                <p>
+                  The primary activities of the NAFV Into consists of a virtual museum and a physical cultural museum in Uvira in the Democratic Republic of the Congo.
+                  The virtual museum on the website virtually preserves culture of the Fuliiru and Vira peoples for the purpose of online education and research. Also the virtual museum is a source of experiment for young generations encouraged to put their hands on the plight during our yearly exhibition at the headquarter.
+                </p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -526,8 +561,13 @@
               </div>
               <div class="step-info">
                 <span class="step-number">Step 03</span>
-                <h3>Development Phase</h3>
-                <p>Executing the planned strategies with precision and agility. Our team implements solutions while maintaining constant communication and progress updates.</p>
+                <h3>Art & Collection</h3>
+                <p>The NAFV museum explores five (5) areas consisting of
+                  The vira culture
+                  The fuliiru culture
+                  The intellectual works of men and women of Fuliiru-Vira descendence (authors and graduates in history, sociology and anthropology)
+                  Recordings , audio and images of political figures of fuliiru and vira,
+                  Modern and antic arts and sculptures by generations of Fuliiru and Vira</p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -539,8 +579,10 @@
               </div>
               <div class="step-info">
                 <span class="step-number">Step 04</span>
-                <h3>Launch &amp; Support</h3>
-                <p>Ensuring smooth deployment and providing ongoing support for implemented solutions. We monitor performance and make necessary adjustments for optimal results.</p>
+                <h3>Background</h3>
+                <p>
+                  The migrations of people from Uvira land which comprise the ancestral kingdoms of Fuliiru and Vira people to North America for the past three decades has left a cultural vacuum in the minds of one generation of young men and women. There is an attempt to affirm that this vacuum goes two generations back based on life experiences both in Canada and the USA. The recent Canadians and Americans of Fuliiru-Vira ascendance , not only are losing the taste of their ancestral languages and traditions, they are also loosing trace of their artifacts, Proverbs, arts and sculptures inherited from their forefathers. In addition to this cultural change, indifference and ignorance, those who tried to lift up the banner through education, history telling and public services are even absent in the memories of today generations. NAFV INT. is dedicated to collect, protect and preserve these cultural writings, objects, photographs, audio and recordings, artworks and other social customs.
+                </p>
               </div>
             </div>
           </div><!-- End Step Item -->
@@ -552,7 +594,7 @@
     </section><!-- /Steps Section -->
 
     <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section">
+    <!--<section id="call-to-action" class="call-to-action section">
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -606,7 +648,7 @@
 
       </div>
 
-    </section><!-- /Call To Action Section -->
+    </section>--> <!-- /Call To Action Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
@@ -649,16 +691,16 @@
                       Beatae magnam dolore quia ipsum. Voluptatem totam et qui dolore dignissimos. Amet quia sapiente laudantium nihil illo et assumenda sit cupiditate. Nam perspiciatis perferendis minus consequatur. Enim ut eos quo.
                     </p>
                     <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/img/person/person-m-7.webp'%}" class="profile-img" alt="">
+                      <img src="{% static 'assets/nami_img/profile.jpg'%}" class="profile-img" alt="">
                       <div class="profile-info">
-                        <h3>Saul Goodman</h3>
-                        <span>Client</span>
+                        <h3>Claude Nyongero Ligogo</h3>
+                        <span>Visitor</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-4 d-none d-lg-block">
                     <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/img/person/person-m-7.webp'%}" class="featured-img" alt="">
+                      <img src="{% static 'assets/nami_img/profile.jpg'%}" class="featured-img" alt="">
                     </div>
                   </div>
                 </div>
@@ -677,23 +719,23 @@
                       Dolorem excepturi esse qui amet maxime quibusdam aut repellendus voluptatum. Corrupti enim a repellat cumque est laborum fuga consequuntur. Dolorem nostrum deleniti quas voluptatem iure dolorum rerum. Repudiandae doloribus ut repellat harum vero aut. Modi aut velit aperiam aspernatur odit ut vitae.
                     </p>
                     <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/img/person/person-f-8.webp'%}" class="profile-img" alt="">
+                      <img src="{% static 'assets/nami_img/maygi.jpg'%}" class="profile-img" alt="">
                       <div class="profile-info">
-                        <h3>Sara Wilsson</h3>
-                        <span>Designer</span>
+                        <h3>Cesar Nyongero Ligogo</h3>
+                        <span>Visitor</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-4 d-none d-lg-block">
                     <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/img/person/person-f-8.webp'%}" class="featured-img" alt="">
+                      <img src="{% static 'assets/nami_img/maygi.jpg'%}" class="featured-img" alt="">
                     </div>
                   </div>
                 </div>
               </div>
             </div><!-- End Testimonial Item -->
 
-            <div class="swiper-slide">
+            <!--<div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row">
                   <div class="col-lg-8">
@@ -721,9 +763,9 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End Testimonial Item -->
+            </div>--><!-- End Testimonial Item -->
 
-            <div class="swiper-slide">
+            <!--<div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row">
                   <div class="col-lg-8">
@@ -749,7 +791,7 @@
                   </div>
                 </div>
               </div>
-            </div><!-- End Testimonial Item -->
+            </div>--><!-- End Testimonial Item -->
 
           </div>
 
@@ -769,8 +811,8 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <div><span>Check Our</span> <span class="description-title">Portfolio</span></div>
+        <h2>Activities</h2>
+        <div><span>Check Our</span> <span class="description-title">Activities</span></div>
       </div><!-- End Section Title -->
 
       <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
@@ -782,16 +824,16 @@
               <i class="bi bi-grid-3x3"></i> All Projects
             </li>
             <li data-filter=".filter-ui">
-              <i class="bi bi-phone"></i> UI/UX
+              <i class="bi bi-brush"></i> Art & Society
             </li>
             <li data-filter=".filter-development">
-              <i class="bi bi-code-slash"></i> Development
+              <i class="bi bi-translate"></i> Language & Customs
             </li>
             <li data-filter=".filter-photography">
-              <i class="bi bi-camera"></i> Photography
+              <i class="bi bi-house"></i>Fuliru Kingdom
             </li>
             <li data-filter=".filter-marketing">
-              <i class="bi bi-graph-up"></i> Marketing
+              <i class="bi bi-house"></i>Vira Kingdom
             </li>
           </ul>
 
@@ -800,13 +842,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-1.webp' %}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{% static 'assets/nami_img/art.png' %}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">UI/UX Design</div>
-                      <h3 class="entry-title">Mobile Banking App</h3>
+                      <div class="entry-meta">Art & Society</div>
+                      <h3 class="entry-title">The Dancing of our society</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-1.webp'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Mobile Banking App; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                        <a href="{% static 'assets/nami_img/art.png'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Art & Society; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details"> <!-- lien pour portofolio -->
@@ -822,13 +864,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-10.webp'%}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{% static 'assets/nami_img/society.jpg'%}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
                       <div class="entry-meta">Development</div>
-                      <h3 class="entry-title">E-Learning Platform</h3>
+                      <h3 class="entry-title">Education</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-10.webp'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: E-Learning Platform; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                        <a href="{% static 'assets/nami_img/society.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Development; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details">
@@ -888,13 +930,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-2.webp'%}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{% static 'assets/nami_img/art.png'%}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">UI/UX Design</div>
-                      <h3 class="entry-title">Smart Home Interface</h3>
+                      <div class="entry-meta">Art & Society</div>
+                      <h3 class="entry-title">Other activities</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-2.webp'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Smart Home Interface; description: At vero eos et accusamus et iusto odio dignissimos ducimus.">
+                        <a href="{% static 'assets/nami_img/art.png'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Art & Society; description: Other activities">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details">
@@ -910,13 +952,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-11.webp'%}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{% static 'assets/nami_img/fulirukingdom.jpg'%}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
                       <div class="entry-meta">Development</div>
                       <h3 class="entry-title">Cloud Management System</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-11.webp'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
+                        <a href="{% static 'assets/nami_img/fulirukingdom.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details">
@@ -932,13 +974,13 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-8.webp'%}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{% static 'assets/nami_img/virakingdom.jpg'%}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
                       <div class="entry-meta">Photography</div>
                       <h3 class="entry-title">Nature Collection</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-8.webp'%}" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
+                        <a href="{% static 'assets/nami_img/virakingdom.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details">
