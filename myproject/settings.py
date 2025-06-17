@@ -90,7 +90,10 @@ DATABASES = {
     #     'PASSWORD': 'nami@tess',
     #     'HOST':'localhost'
     # }
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(
+        'postgresql://nami:8mJleAGC4yP0hIROBYiSVjEuIFL5SwJV@dpg-d18e34vdiees73aq3ftg-a.oregon-postgres.render.com/nami_db',
+        conn_max_age=600
+    )
 }
 if not DATABASES['default']:
     raise Exception("Database config is empty! Check your DATABASE_URL env var.")
