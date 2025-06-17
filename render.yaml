@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: nami-industry
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn myproject.wsgi:application"
+    migrationsCommand: "python manage.py migrate"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: nami
+          property: connectionString
+
+databases:
+  - name: nami
+    databaseName: nami_db
+    user: nami
