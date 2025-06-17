@@ -1,0 +1,7 @@
+<h1>Image Representation Test</h1>
+{% for produit in produits %}
+  <div>
+    <h3>{{ produit.nom }}</h3>
+    <img src="{{ produit.image.url }}" alt="{{ produit.nom }}" style="max-width: 300px;">
+  </div>
+{% endfor %}

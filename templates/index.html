@@ -56,23 +56,6 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#team">Team</a></li>
-          <!--<li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">Deep Dropdown 1</a></li>
-                  <li><a href="#">Deep Dropdown 2</a></li>
-                  <li><a href="#">Deep Dropdown 3</a></li>
-                  <li><a href="#">Deep Dropdown 4</a></li>
-                  <li><a href="#">Deep Dropdown 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
-            </ul>
-          </li>-->
           <li><a href="#contact">Contact</a></li>
           <!--{% if user.is_authenticated %}
           <li><a href="logout">logout or signup</a></li>
@@ -242,6 +225,7 @@
                   }
                 </script>
                 <div class="swiper-wrapper">
+                  {% for element in elements %}
                   <div class="swiper-slide">
                     <div class="testimonial-item">
                       <div class="rating mb-3">
@@ -251,97 +235,17 @@
                         <i class="bi bi-star-fill"></i>
                         <i class="bi bi-star-fill"></i>
                       </div>
-                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and are mainly farmers. Their culture is rich in traditions. Despite conflicts, they remain proud of their identity."</p>
+                      <p>{{ element.description }}</p>
                       <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/nami_img/cesar.jpg' %} " class="client-img" alt="Client" loading="lazy">
+                        <img src="{{ element.image_pic.url }}" class="client-img" alt="{{ elemnt.fonction }}" loading="lazy">
                         <div>
-                          <h6 class="mb-0">Muholeza Cesar Ligogo</h6>
-                          <span>Co-founder</span>
+                          <h6 class="mb-0">{{ element.name }}</h6>
+                          <span>{{ element.fonction }}</span>
                         </div>
                       </div>
                     </div>
                   </div>
-
-                  <div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="rating mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                      </div>
-                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and farm to live. They value family, traditions, and leadership. Despite difficulties, they stay connected to their culture."</p>
-                      <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/nami_img/Kapapi.png'%} " class="client-img" alt="Client" loading="lazy">
-                        <div>
-                          <h6 class="mb-0">John Kapapi</h6>
-                          <span>Founder</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="rating mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                      </div>
-                      <p>"The Bafuliru live in South Kivu, DRC. They speak Kifuliru and farm to live. They value family, traditions, and leadership. Despite difficulties, they stay connected to their culture."</p>
-                      <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/nami_img/logo.png'%} " class="client-img" alt="Client" loading="lazy">
-                        <div>
-                          <h6 class="mb-0">Anonymous</h6>
-                          <span>Daf</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--<div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="rating mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                      </div>
-                      <p>"The depth of knowledge and unwavering dedication they bring to every project is exceptional. They've become an essential ally in driving our expansion."</p>
-                      <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/img/person/person-f-2.webp'%}" class="client-img" alt="Client" loading="lazy">
-                        <div>
-                          <h6 class="mb-0">Isabella Diaz</h6>
-                          <span>Research Analyst</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>-->
-
-                  <!--<div class="swiper-slide">
-                    <div class="testimonial-item">
-                      <div class="rating mb-3">
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-fill"></i>
-                        <i class="bi bi-star-half"></i>
-                      </div>
-                      <p>"Their dedication to delivering superior solutions and their meticulous attention to detail have profoundly impacted our corporate growth trajectory."</p>
-                      <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{% static 'assets/img/person/person-f-3.webp'%}" class="client-img" alt="Client" loading="lazy">
-                        <div>
-                          <h6 class="mb-0">Olivia Chen</h6>
-                          <span>Development Strategist</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>-->
-
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -368,8 +272,8 @@
             <div class="col-lg-8 col-md-12">
               <div class="service-intro">
                 <h2 class="service-heading">
-                  <div>Innovative business</div>
-                  <div><span>performance solutions</span></div>
+                  <div>N A F V M</div>
+                  <div><span>virtual museum</span></div>
                 </h2>
               </div>
             </div>
@@ -389,17 +293,20 @@
         </div>
         {% comment %} SERVICE START HERE {% endcomment %}
         <div class="row justify-content-center">
-          <!--{% for feature in features %}
+          {% for feature in features %}
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
-                <i class="bi bi-palette"></i>
+                <i class="{{feature.icons}}"></i>
               </div>
-              <a href="service-details" class="card-action d-flex align-items-center justify-content-center rounded-circle">
+              <div class="client-info d-flex align-items-center mt-4">
+                  <img src="{{ feature.image_pic.url }}" class="img-fluid" alt="{{ feature.name }}" loading="lazy">
+              </div>
+              <a href="service-details/{{feature.id}}" class="card-action d-flex align-items-center justify-content-center rounded-circle">
                 <i class="bi bi-arrow-up-right"></i>
               </a>
               <h3>
-                <a href="service-details">
+                <a href="service-details/{{feature.id}}">
                    {{ feature.name }}
                 </a>
               </h3>
@@ -408,106 +315,9 @@
               </p>
             </div>
           </div>
-          {% endfor %}-->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-gem"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  <!--Design <span>systems</span>-->
-                  {{ feature2.name }}
-                </a>
-              </h3>
-              <p>
-                {{ feature2.details }}
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-megaphone"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                 <!-- Marketing <span>strategies</span> -->
-                  {{ feature3.name }}
-                </a>
-              </h3>
-              <p>
-                {{ feature3.details }}
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-code-slash"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  <!--Digital <span>platforms</span>-->
-                  {{ feature4.name }}
-                </a>
-              </h3>
-              <p>
-                {{ feature4.details }}
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-graph-up"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  <!--Growth <span>acceleration</span>-->
-                  {{ feature5.name }}
-                </a>
-              </h3>
-              <p>
-                {{ feature5.details }}
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="bi bi-camera-video"></i>
-              </div>
-              <a href="service-details.html" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
-              <h3>
-                <a href="service-details.html">
-                  <!--Media <span>solutions</span>-->
-                  {{ feature6.name }}
-                </a>
-              </h3>
-              <p>
-                {{ feature6.details }}
-              </p>
-            </div>
-          </div>
+          {% endfor %}
         </div>
-
       </div>
-
     </section><!-- /Services Section -->
 
     <!-- Steps Section -->
@@ -520,78 +330,25 @@
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
         <div class="steps-wrapper">
-
+          {% for step in steps %}
           <div class="step-item" data-aos="fade-right" data-aos-delay="200">
             <div class="step-content">
               <div class="step-icon">
-                <i class="bi bi-lightbulb"></i>
+                <i class="{{ step.step_icon }}"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">Step 01</span>
-                <h3>Mission</h3>
-                <p>
-                  As described above, the NAFV Into. will pursue the mission of collecting, protecting, preserving and educating its members and the communities about the items inherited and the importance of learning about cultures and people, lifestyle and practices of the past so they can understand the future.
-                </p>
+                <span class="step-number">{{step.step_number}}</span>
+                <h3>{{step.title}}</h3>
+                <p>{{ step.description}}</p>
               </div>
             </div>
-          </div><!-- End Step Item -->
-
-          <div class="step-item" data-aos="fade-left" data-aos-delay="300">
-            <div class="step-content">
-              <div class="step-icon">
-                <i class="bi bi-gear"></i>
-              </div>
-              <div class="step-info">
-                <span class="step-number">Step 02</span>
-                <h3>Activities</h3>
-                <p>
-                  The primary activities of the NAFV Into consists of a virtual museum and a physical cultural museum in Uvira in the Democratic Republic of the Congo.
-                  The virtual museum on the website virtually preserves culture of the Fuliiru and Vira peoples for the purpose of online education and research. Also the virtual museum is a source of experiment for young generations encouraged to put their hands on the plight during our yearly exhibition at the headquarter.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Step Item -->
-
-          <div class="step-item" data-aos="fade-right" data-aos-delay="400">
-            <div class="step-content">
-              <div class="step-icon">
-                <i class="bi bi-bar-chart"></i>
-              </div>
-              <div class="step-info">
-                <span class="step-number">Step 03</span>
-                <h3>Art & Collection</h3>
-                <p>The NAFV museum explores five (5) areas consisting of
-                  The vira culture
-                  The fuliiru culture
-                  The intellectual works of men and women of Fuliiru-Vira descendence (authors and graduates in history, sociology and anthropology)
-                  Recordings , audio and images of political figures of fuliiru and vira,
-                  Modern and antic arts and sculptures by generations of Fuliiru and Vira</p>
-              </div>
-            </div>
-          </div><!-- End Step Item -->
-
-          <div class="step-item" data-aos="fade-left" data-aos-delay="500">
-            <div class="step-content">
-              <div class="step-icon">
-                <i class="bi bi-check2-circle"></i>
-              </div>
-              <div class="step-info">
-                <span class="step-number">Step 04</span>
-                <h3>Background</h3>
-                <p>
-                  The migrations of people from Uvira land which comprise the ancestral kingdoms of Fuliiru and Vira people to North America for the past three decades has left a cultural vacuum in the minds of one generation of young men and women. There is an attempt to affirm that this vacuum goes two generations back based on life experiences both in Canada and the USA. The recent Canadians and Americans of Fuliiru-Vira ascendance , not only are losing the taste of their ancestral languages and traditions, they are also loosing trace of their artifacts, Proverbs, arts and sculptures inherited from their forefathers. In addition to this cultural change, indifference and ignorance, those who tried to lift up the banner through education, history telling and public services are even absent in the memories of today generations. NAFV INT. is dedicated to collect, protect and preserve these cultural writings, objects, photographs, audio and recordings, artworks and other social customs.
-                </p>
-              </div>
-            </div>
-          </div><!-- End Step Item -->
-
+          </div>
+          {% endfor %}
         </div>
-
       </div>
-
-    </section><!-- /Steps Section -->
+    </section>
+    <!-- /Steps Section -->
 
     <!-- Call To Action Section -->
     <!--<section id="call-to-action" class="call-to-action section">
@@ -676,134 +433,40 @@
               }
             }
           </script>
-
           <div class="swiper-wrapper">
-
+            {% for testimonial in testimonials %}
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="row">
                   <div class="col-lg-8">
-                    <h2>Sed ut perspiciatis unde omnis</h2>
-                    <p>
-                      Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                    </p>
-                    <p>
-                      Beatae magnam dolore quia ipsum. Voluptatem totam et qui dolore dignissimos. Amet quia sapiente laudantium nihil illo et assumenda sit cupiditate. Nam perspiciatis perferendis minus consequatur. Enim ut eos quo.
-                    </p>
+                    <h2>{{ testimonial.title }}</h2>
+                    <p>{{ testimonial.first_paragraph }}</p>
+                    <p>{{testimonial.second_paragraph}}</p>
                     <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/nami_img/profile.jpg'%}" class="profile-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" class="profile-img" alt="">
                       <div class="profile-info">
-                        <h3>Claude Nyongero Ligogo</h3>
-                        <span>Visitor</span>
+                        <h3>{{testimonial.name}}</h3>
+                        <span>{{testimonial.fonction}}</span>
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-4 d-none d-lg-block">
                     <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/nami_img/profile.jpg'%}" class="featured-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" class="featured-img" alt="">
                     </div>
                   </div>
                 </div>
               </div>
             </div><!-- End Testimonial Item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <h2>Nemo enim ipsam voluptatem</h2>
-                    <p>
-                      Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                    </p>
-                    <p>
-                      Dolorem excepturi esse qui amet maxime quibusdam aut repellendus voluptatum. Corrupti enim a repellat cumque est laborum fuga consequuntur. Dolorem nostrum deleniti quas voluptatem iure dolorum rerum. Repudiandae doloribus ut repellat harum vero aut. Modi aut velit aperiam aspernatur odit ut vitae.
-                    </p>
-                    <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/nami_img/maygi.jpg'%}" class="profile-img" alt="">
-                      <div class="profile-info">
-                        <h3>Cesar Nyongero Ligogo</h3>
-                        <span>Visitor</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/nami_img/maygi.jpg'%}" class="featured-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Testimonial Item -->
-
-            <!--<div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <h2>
-                      Labore nostrum eos impedit
-                    </h2>
-                    <p>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                    </p>
-                    <p>
-                      Itaque ut explicabo vero occaecati est quam rerum sed. Numquam tempora aut aut quaerat quia illum. Nobis quia autem odit ipsam numquam. Doloribus sit sint corporis eius totam fuga. Hic nostrum suscipit corrupti nam expedita adipisci aut optio.
-                    </p>
-                    <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/img/person/person-m-9.webp'%}" class="profile-img" alt="">
-                      <div class="profile-info">
-                        <h3>Matt Brandon</h3>
-                        <span>Freelancer</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/img/person/person-m-9.webp'%}" class="featured-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>--><!-- End Testimonial Item -->
-
-            <!--<div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="row">
-                  <div class="col-lg-8">
-                    <h2>Impedit dolor facilis nulla</h2>
-                    <p>
-                      Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                    </p>
-                    <p>
-                      Omnis aspernatur accusantium qui delectus praesentium repellendus. Facilis sint odio aspernatur voluptas commodi qui qui qui pariatur. Corrupti deleniti itaque quaerat ipsum deleniti culpa tempora tempore. Et consequatur exercitationem hic aspernatur nobis est voluptatibus architecto laborum.
-                    </p>
-                    <div class="profile d-flex align-items-center">
-                      <img src="{% static 'assets/img/person/person-f-10.webp'%}" class="profile-img" alt="">
-                      <div class="profile-info">
-                        <h3>Jena Karlis</h3>
-                        <span>Store Owner</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-4 d-none d-lg-block">
-                    <div class="featured-img-wrapper">
-                      <img src="{% static 'assets/img/person/person-f-10.webp'%}" class="featured-img" alt="">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>--><!-- End Testimonial Item -->
-
+            {% endfor %}
           </div>
 
           <div class="swiper-navigation w-100 d-flex align-items-center justify-content-center">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
           </div>
-
         </div>
-
       </div>
-
     </section><!-- /Testimonials Section -->
 
     <!-- Portfolio Section -->
@@ -836,9 +499,7 @@
               <i class="bi bi-house"></i>Vira Kingdom
             </li>
           </ul>
-
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
-
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article class="portfolio-entry">
                 <figure class="entry-image">
@@ -1035,240 +696,28 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-
+          {% for team in teams %}
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member d-flex">
               <div class="member-img">
-                <img src="{% static 'assets/img/person/person-m-7.webp'%}" class="img-fluid" alt="" loading="lazy">
+                <img src="{{team.image_pic.url}}" class="img-fluid" alt="" loading="lazy">
               </div>
               <div class="member-info flex-grow-1">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-                <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+                <h4>{{team.name}}</h4>
+                <span>{{team.fonction}}</span>
+                <p>{{team.description}}</p>
                 <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
+                  <a href="{{team.facebook_link}}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{team.twitter_link}}"><i class="bi bi-twitter-x"></i></a>
+                  <a href="{{team.linkedin_link}}"><i class="bi bi-linkedin"></i></a>
                 </div>
               </div>
             </div>
           </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="{% static 'assets/img/person/person-f-8.webp'%}" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-                <p>Labore ipsam sit consequatur exercitationem rerum laboriosam laudantium aut quod dolores exercitationem ut</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="{% static 'assets/img/person/person-m-6.webp'%}" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-                <p>Illum minima ea autem doloremque ipsum quidem quas aspernatur modi ut praesentium vel tque sed facilis at qui</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="{% static 'assets/img/person/person-f-4.webp'%}" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-                <p>Magni voluptatem accusamus assumenda cum nisi aut qui dolorem voluptate sed et veniam quasi quam consectetur</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="{% static 'assets/img/person/person-m-12.webp'%}" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Brian Doe</h4>
-                <span>Marketing</span>
-                <p>Qui consequuntur quos accusamus magnam quo est molestiae eius laboriosam sunt doloribus quia impedit laborum velit</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="team-member d-flex">
-              <div class="member-img">
-                <img src="{% static 'assets/img/person/person-f-9.webp'%}" class="img-fluid" alt="" loading="lazy">
-              </div>
-              <div class="member-info flex-grow-1">
-                <h4>Josepha Palas</h4>
-                <span>Operation</span>
-                <p>Sint sint eveniet explicabo amet consequatur nesciunt error enim rerum earum et omnis fugit eligendi cupiditate vel</p>
-                <div class="social">
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                  <a href=""><i class="bi bi-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
+          {% endfor %}
         </div>
-
       </div>
-
     </section><!-- /Team Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <div><span>Check Our</span> <span class="description-title">Pricing</span></div>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-          <!-- Basic Plan -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-card">
-              <div class="plan-header">
-                <div class="plan-icon">
-                  <i class="bi bi-box"></i>
-                </div>
-                <h3>Starter</h3>
-                <p>For individuals just getting started</p>
-              </div>
-              <div class="plan-pricing">
-                <div class="price">
-                  <span class="currency">$</span>
-                  <span class="amount">12</span>
-                  <span class="period">/month</span>
-                </div>
-              </div>
-              <div class="plan-features">
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Nullam accumsan lorem</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Vestibulum auctor dapibus</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Nulla consequat massa</li>
-                  <li class="disabled"><i class="bi bi-x-circle-fill"></i> In enim justo rhoncus ut</li>
-                  <li class="disabled"><i class="bi bi-x-circle-fill"></i> Curabitur ullamcorper ultricies</li>
-                </ul>
-              </div>
-              <div class="plan-cta">
-                <a href="#" class="btn-plan">Choose Plan</a>
-              </div>
-            </div>
-          </div><!-- End Basic Plan -->
-
-          <!-- Professional Plan -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pricing-card popular">
-              <div class="popular-tag">Most Popular</div>
-              <div class="plan-header">
-                <div class="plan-icon">
-                  <i class="bi bi-briefcase"></i>
-                </div>
-                <h3>Professional</h3>
-                <p>For small teams and growing businesses</p>
-              </div>
-              <div class="plan-pricing">
-                <div class="price">
-                  <span class="currency">$</span>
-                  <span class="amount">39</span>
-                  <span class="period">/month</span>
-                </div>
-              </div>
-              <div class="plan-features">
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Donec quam felis ultricies</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Nam eget dui etiam rhoncus</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Maecenas tempus tellus</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Donec pede justo fringilla</li>
-                  <li class="disabled"><i class="bi bi-x-circle-fill"></i> Cras dapibus vivamus</li>
-                </ul>
-              </div>
-              <div class="plan-cta">
-                <a href="#" class="btn-plan">Choose Plan</a>
-              </div>
-            </div>
-          </div><!-- End Professional Plan -->
-
-          <!-- Enterprise Plan -->
-          <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="pricing-card">
-              <div class="plan-header">
-                <div class="plan-icon">
-                  <i class="bi bi-building"></i>
-                </div>
-                <h3>Enterprise</h3>
-                <p>For large organizations and corporations</p>
-              </div>
-              <div class="plan-pricing">
-                <div class="price">
-                  <span class="currency">$</span>
-                  <span class="amount">79</span>
-                  <span class="period">/month</span>
-                </div>
-              </div>
-              <div class="plan-features">
-                <ul>
-                  <li><i class="bi bi-check-circle-fill"></i> Etiam sit amet orci eget</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Pellentesque posuere vulputate</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Quisque rutrum aenean</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Fusce vulputate eleifend</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Phasellus viverra nulla</li>
-                </ul>
-              </div>
-              <div class="plan-cta">
-                <a href="#" class="btn-plan">Choose Plan</a>
-              </div>
-            </div>
-          </div><!-- End Enterprise Plan -->
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
 
     <!-- Faq Section -->
     <section class="faq-9 faq section" id="faq">
@@ -1362,10 +811,12 @@
               <div class="icon-box">
                 <i class="bi bi-geo-alt"></i>
               </div>
+              {% for location in locations %}
               <div class="info-content">
-                <h4>Our Address</h4>
-                <p>1842 Maple Avenue, Portland, Oregon 97204</p>
+                <h4>{{location.location_name}}</h4>
+                <p>{{location.location}}</p>
               </div>
+              {% endfor %}
             </div>
           </div>
 
@@ -1374,11 +825,13 @@
               <div class="icon-box">
                 <i class="bi bi-envelope"></i>
               </div>
+              {% for email in emails %}
               <div class="info-content">
-                <h4>Email Address</h4>
-                <p>info@example.com</p>
-                <p>contact@example.com</p>
+                <h4>{{email.email_name}}</h4>
+                <p>{{email.email_address}}</p>
+                {% comment %} <p>contact@example.com</p> {% endcomment %}
               </div>
+              {% endfor %}
             </div>
           </div>
 
@@ -1387,11 +840,13 @@
               <div class="icon-box">
                 <i class="bi bi-headset"></i>
               </div>
+              {% for work in works_hours %}
               <div class="info-content">
-                <h4>Hours of Operation</h4>
-                <p>Sunday-Fri: 9 AM - 6 PM</p>
-                <p>Saturday: 9 AM - 4 PM</p>
+                <h4>{{work.hours_name}}</h4>
+                <p>{{work.days_works}}</p>
+                {% comment %} <p>Saturday: 9 AM - 4 PM</p> {% endcomment %}
               </div>
+              {% endfor %}
             </div>
           </div>
         </div>
@@ -1410,7 +865,7 @@
             <div class="contact-form-wrapper">
               <h2 class="text-center mb-4">Get in Touch</h2>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form method="post" class="php-email-form" enctype="multipart/form-data" >
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -1474,8 +929,8 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Strategy</span>
+          <a href="index" class="logo d-flex align-items-center">
+            <span class="sitename">North America Fuliru Vira virtual Museum</span>
           </a>
           <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
           <div class="social-links d-flex mt-4">
@@ -1521,7 +976,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Strategy</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">NAFUV</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

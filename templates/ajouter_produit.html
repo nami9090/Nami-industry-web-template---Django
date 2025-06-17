@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter un produit</title>
+</head>
+<body>
+    <h1>Ajouter un nouveau produit</h1>
+
+    <!-- Affiche les erreurs du formulaire si il y en a -->
+    {% if form.errors %}
+        <div style="color: red;">
+            {{ form.errors }}
+        </div>
+    {% endif %}
+
+    <!-- Formulaire de type POST avec envoi de fichiers -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Enregistrer</button>
+    </form>
+</body>
+</html>

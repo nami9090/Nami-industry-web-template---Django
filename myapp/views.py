@@ -3,13 +3,37 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
-from .models import Feature
+from .models import Feature, Produit, More_Culture, StepModel, TestimonialModel, TeamModel, LocationModel, EmailModel, HourOfOperation
+from .forms import ProduitForm, SuggestForm
 
 
 # Create your views here.
 def index(request):
+    if request.method == 'POST':
+        forms = SuggestForm(request.POST)
+        if forms.is_valid():
+            print(forms)
     features = Feature.objects.all()
-    return render(request, 'index.html', {'features':features})
+    elements = More_Culture.objects.all()
+    steps = StepModel.objects.all()
+    testimonials = TestimonialModel.objects.all()
+    teams = TeamModel.objects.all()
+
+    locations = LocationModel.objects.all()
+    emails = EmailModel.objects.all()
+    works_hours = HourOfOperation.objects.all()
+
+    return render(request, 'index.html', 
+                  {
+                      'features':features, 
+                      'elements':elements, 
+                      'steps':steps, 
+                      'testimonials':testimonials,
+                      'teams': teams,
+                      'locations':locations,
+                      'emails':emails,
+                      'works_hours':works_hours
+                      })
 
 def counter(request):
     # text = request.POST['text']
@@ -20,8 +44,9 @@ def counter(request):
 def portfolio(request):
     return render(request, 'portfolio-details.html')
 
-def service(request):
-    return render(request, 'service-details.html')
+def service(request, pk):
+    feature = Feature.objects.get(id=pk)
+    return render(request, 'service-details.html', {'feature':feature})
 
 def register(request):
     if request.method == 'POST':
@@ -67,3 +92,21 @@ def logout(request):
 
 def post(request, pk):
     return render(request, 'post.html', {'pk':pk})
+
+def ajouter_image(request):
+    if request.method == 'POST':
+        form = ProduitForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('produit')
+    else:
+        form = ProduitForm()
+        return render(request, 'ajouter_produit.html', {'form': form})
+    
+def produit_viz(request):
+    produits = Produit.objects.all()
+    return render(request, 'produit.html',{'produits':produits})
+
+def more_culture(request):
+    elements = More_Culture.objects.all()
+    return render(request,'index.html', {'elements':elements})
