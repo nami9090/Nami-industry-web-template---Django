@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-y!9vfll!c1g2#k_j^k)99hri%n&x%eh(zn)x=108e#xuwvda#f
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'https://nami-industry-web-template-django.onrender.com'
+    'nami-industry-web-template-django.onrender.com'
 ]
 
 
