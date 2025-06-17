@@ -80,6 +80,8 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+print("DATABASE_URL from env:", os.environ.get('DATABASE_URL'))
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
@@ -88,8 +90,10 @@ DATABASES = {
     #     'PASSWORD': 'nami@tess',
     #     'HOST':'localhost'
     # }
-    'defaut': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
+if not DATABASES['default']:
+    raise Exception("Database config is empty! Check your DATABASE_URL env var.")
 
 
 # Password validation
