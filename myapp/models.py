@@ -66,3 +66,31 @@ class EmailModel(models.Model):
 class HourOfOperation(models.Model):
     hours_name = models.CharField(max_length=100)
     days_works = models.CharField(max_length=1000)
+
+class AboutImageModel(models.Model):
+    placeholder = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='images/')
+
+class ArtSocietyModel(models.Model):
+    title = models.CharField(max_length=100)
+    subtile = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='images/')
+
+class LanguageCustomsModel(models.Model):
+    title = models.CharField(max_length=100)
+    subtile = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='images/')
+
+class FuliruGalleyModel(models.Model):
+    title = models.CharField(max_length=100)
+    subtile = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='images/')
+
+class ViraGalleyModel(models.Model):
+    title = models.CharField(max_length=100)
+    subtile = models.CharField(max_length=100)
+    description = models.CharField(max_length=1000)
+    image = models.ImageField(upload_to='images/')

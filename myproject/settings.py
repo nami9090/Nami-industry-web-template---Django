@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+
 import dj_database_url
+import psycopg2
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,10 +28,11 @@ SECRET_KEY = 'django-insecure-y!9vfll!c1g2#k_j^k)99hri%n&x%eh(zn)x=108e#xuwvda#f
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'nami-industry-web-template-django.onrender.com'
+    # 'nami-industry-web-template-django.onrender.com'
+    # 'nafuv.org'
 ]
 
 
@@ -49,13 +52,16 @@ INSTALLED_APPS = [
     'cloudinary_storage',
 ]
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dh7q4al1t',
-    'API_KEY': '291283489131772',
-    'API_SECRET': '3537UR0LtPTH8ezJmJHAQCP5608',
-}
+#Cloudinary Configuration
+#Cloudinary Configuration
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dh7q4al1t',
+#     'API_KEY': '291283489131772',
+#     'API_SECRET': '3537UR0LtPTH8ezJmJHAQCP5608',
+# }
+
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -67,7 +73,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -92,21 +97,22 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-print("DATABASE_URL from env:", os.environ.get('DATABASE_URL'))
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'myproject',
-    #     'USER': 'nami',
-    #     'PASSWORD': 'nami@tess',
-    #     'HOST':'localhost'
-    # }
-    'default': dj_database_url.parse(
-        'postgresql://nami:8mJleAGC4yP0hIROBYiSVjEuIFL5SwJV@dpg-d18e34vdiees73aq3ftg-a.oregon-postgres.render.com/nami_db',
-        conn_max_age=600
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'myproject',
+        'USER': 'nami',
+        'PASSWORD': 'nami@tess',
+        'HOST':'localhost'
+    }
+
+    # 'default': dj_database_url.parse(
+    #     'postgresql://nami:8mJleAGC4yP0hIROBYiSVjEuIFL5SwJV@dpg-d18e34vdiees73aq3ftg-a.oregon-postgres.render.com/nami_db',
+    #     conn_max_age=600
+    # )
 }
+
 if not DATABASES['default']:
     raise Exception("Database config is empty! Check your DATABASE_URL env var.")
 

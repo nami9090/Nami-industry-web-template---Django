@@ -1,8 +1,9 @@
 django
-psycopg2
+psycopg2-binary
 Pillow
 gunicorn
 whitenoise
 dj-database-url
 cloudinary 
 django-cloudinary-storage
+PyMySQL

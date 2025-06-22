@@ -3,7 +3,21 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
-from .models import Feature, Produit, More_Culture, StepModel, TestimonialModel, TeamModel, LocationModel, EmailModel, HourOfOperation
+from .models import (
+                    Feature, 
+                    Produit, 
+                    More_Culture, 
+                    StepModel, 
+                    TestimonialModel, 
+                    TeamModel, 
+                    LocationModel, 
+                    EmailModel, 
+                    HourOfOperation, 
+                    AboutImageModel,
+                    ArtSocietyModel, 
+                    LanguageCustomsModel, 
+                    FuliruGalleyModel, 
+                    ViraGalleyModel)
 from .forms import ProduitForm, SuggestForm
 
 
@@ -22,7 +36,11 @@ def index(request):
     locations = LocationModel.objects.all()
     emails = EmailModel.objects.all()
     works_hours = HourOfOperation.objects.all()
-
+    aboutImages = AboutImageModel.objects.all()
+    galleryArtSociety = ArtSocietyModel.objects.all()
+    languageCusts =  LanguageCustomsModel.objects.all()
+    fuliruGallerys = FuliruGalleyModel.objects.all()
+    viraGallerys = ViraGalleyModel.objects.all()
     return render(request, 'index.html', 
                   {
                       'features':features, 
@@ -32,7 +50,12 @@ def index(request):
                       'teams': teams,
                       'locations':locations,
                       'emails':emails,
-                      'works_hours':works_hours
+                      'works_hours':works_hours,
+                      'aboutImages':aboutImages,
+                      'galleryArtSociety':galleryArtSociety,
+                      'languageCusts':languageCusts,
+                      'fuliruGallerys':fuliruGallerys,
+                      'viraGallerys':viraGallerys
                       })
 
 def counter(request):

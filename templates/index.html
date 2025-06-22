@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>NAFUV</title>
+  <title>Fuliru, Vira, Virtuel Museum</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -54,8 +54,8 @@
           <li><a href="#hero" class="active">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
+          <li><a href="#portfolio">Gallery</a></li>
+          <li><a href="#team">Teams</a></li>
           <li><a href="#contact">Contact</a></li>
           <!--{% if user.is_authenticated %}
           <li><a href="logout">logout or signup</a></li>
@@ -111,7 +111,7 @@
             <div class="visual-content">
               <div class="fluid-shape">
                 <!--<img src="{% static 'assets/img/abstract/abstract-1.webp'%}" alt="Abstract Fluid Shape" class="fluid-img">-->
-                <img src="{% static 'assets/nami_img/logo1.png'%}" alt="Abstract Fluid Shape" class="fluid-img">
+                <img src="{% static 'assets/nami_img/logo1.png'%}" oncontextmenu="return false;" draggable="false" alt="Abstract Fluid Shape" class="fluid-img">
               </div>
 
               <div class="stats-card">
@@ -142,18 +142,88 @@
 
       <div class="container">
 
-        <div class="row gx-5 align-items-center">
-          <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-            <div class="about-image position-relative">
-              <!--<img src="{% static 'assets/img/about/about-portrait-1.webp' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">-->
-              <img src="{% static 'assets/nami_img/about_pic.jpg' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
-              <div class="experience-badge">
-                <span class="years">5+</span>
-                <span class="text">Years of Working</span>
+      <div class="row gx-5 align-items-center">
+        <!--<div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">-->
+              <!--<div class="about-image position-relative">
+                <img src="{% static 'assets/nami_img/about_pic.jpg' %}" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
+                <div class="experience-badge">
+                  <span class="years">5+</span>
+                  <span class="text">Years of Working</span>
+                </div>
+              </div>-->
+              <!--<div class="testimonial-slider swiper init-swiper">
+                <script type="application/json" class="swiper-config">
+                  {
+                    "loop": true,
+                    "speed": 800,
+                    "autoplay": {
+                      "delay": 5000
+                    },
+                    "slidesPerView": 1,
+                    "spaceBetween": 30,
+                    "navigation": {
+                      "nextEl": ".slider-next",
+                      "prevEl": ".slider-prev"
+                    },
+                    "breakpoints": {
+                      "768": {
+                        "slidesPerView": 2
+                      }
+                    }
+                  }
+                </script>
+                <div class="swiper-wrapper">
+                  {% for aboutImage in aboutImages %}
+                  <div class="swiper-slide">
+                    <img src="{{ aboutImage.image.url }}" class="client-img" width="600" height="600" alt="{{ aboutImage.placeholder }}" oncontextmenu="return false;" draggable="false" loading="lazy">
+                  </div>
+                  {% endfor %}
+                </div>
+              </div>-->
+          <!--</div>-->
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 1000,
+                      "autoplay": {
+                        "delay": 6000
+                      },
+                      "effect": "creative",
+                      "creativeEffect": {
+                        "prev": {
+                          "shadow": true,
+                          "translate": [0, 0, -400]
+                        },
+                        "next": {
+                          "translate": ["100%", 0, 0]
+                        }
+                      },
+                      "slidesPerView": 1,
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper">
+
+                    {% for aboutImage in aboutImages %}
+                    <div class="swiper-slide">
+                      <img src="{{ aboutImage.image.url }}" class="client-img" width="600" height="600" alt="{{ aboutImage.placeholder }}" oncontextmenu="return false;" draggable="false" loading="lazy">
+                    </div>
+                    {% endfor %}
+
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
               </div>
             </div>
           </div>
-
           <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-left" data-aos-delay="300">
             <div class="about-content">
               <h2>Background</h2>
@@ -201,7 +271,6 @@
                 </div>
               </div>
             </div>
-
             <div class="col-lg-8" data-aos="fade-left" data-aos-delay="300">
               <div class="testimonial-slider swiper init-swiper">
                 <script type="application/json" class="swiper-config">
@@ -237,7 +306,7 @@
                       </div>
                       <p>{{ element.description }}</p>
                       <div class="client-info d-flex align-items-center mt-4">
-                        <img src="{{ element.image_pic.url }}" class="client-img" alt="{{ elemnt.fonction }}" loading="lazy">
+                        <img src="{{ element.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="client-img" alt="{{ elemnt.fonction }}" loading="lazy">
                         <div>
                           <h6 class="mb-0">{{ element.name }}</h6>
                           <span>{{ element.fonction }}</span>
@@ -294,13 +363,13 @@
         {% comment %} SERVICE START HERE {% endcomment %}
         <div class="row justify-content-center">
           {% for feature in features %}
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="service-card position-relative z-1">
               <div class="service-icon">
                 <i class="{{feature.icons}}"></i>
               </div>
-              <div class="client-info d-flex align-items-center mt-4">
-                  <img src="{{ feature.image_pic.url }}" class="img-fluid" alt="{{ feature.name }}" loading="lazy">
+              <div class="client-info d-flex align-items-center">
+                  <img src="{{ feature.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="img-fluid" alt="{{ feature.name }}" loading="lazy">
               </div>
               <a href="service-details/{{feature.id}}" class="card-action d-flex align-items-center justify-content-center rounded-circle">
                 <i class="bi bi-arrow-up-right"></i>
@@ -348,64 +417,6 @@
         </div>
       </div>
     </section>
-    <!-- /Steps Section -->
-
-    <!-- Call To Action Section -->
-    <!--<section id="call-to-action" class="call-to-action section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="advertise-1 d-flex flex-column flex-lg-row gap-4 align-items-center position-relative">
-
-          <div class="content-left flex-grow-1" data-aos="fade-right" data-aos-delay="200">
-            <span class="badge text-uppercase mb-2">Don't Miss!</span>
-            <h2>Revolutionize Your Digital Experience Today</h2>
-            <p class="my-4">Strategia accelerates your business growth through innovative solutions and cutting-edge technology. Join thousands of satisfied customers who have transformed their operations.</p>
-
-            <div class="features d-flex flex-wrap gap-3 mb-4">
-              <div class="feature-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Premium Support</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Cloud Integration</span>
-              </div>
-              <div class="feature-item">
-                <i class="bi bi-check-circle-fill"></i>
-                <span>Real-time Analytics</span>
-              </div>
-            </div>
-
-            <div class="cta-buttons d-flex flex-wrap gap-3">
-              <a href="#" class="btn btn-primary">Start Free Trial</a>
-              <a href="#" class="btn btn-outline">Learn More</a>
-            </div>
-          </div>
-
-          <div class="content-right position-relative" data-aos="fade-left" data-aos-delay="300">
-            <img src="{% static 'assets/img/misc/misc-1.webp' %}" alt="Digital Platform" class="img-fluid rounded-4">
-            <div class="floating-card">
-              <div class="card-icon">
-                <i class="bi bi-graph-up-arrow"></i>
-              </div>
-              <div class="card-content">
-                <span class="stats-number">245%</span>
-                <span class="stats-text">Growth Rate</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="decoration">
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>--> <!-- /Call To Action Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
@@ -443,7 +454,7 @@
                     <p>{{ testimonial.first_paragraph }}</p>
                     <p>{{testimonial.second_paragraph}}</p>
                     <div class="profile d-flex align-items-center">
-                      <img src="{{ testimonial.image_pic.url }}" class="profile-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="profile-img" alt="">
                       <div class="profile-info">
                         <h3>{{testimonial.name}}</h3>
                         <span>{{testimonial.fonction}}</span>
@@ -452,7 +463,7 @@
                   </div>
                   <div class="col-lg-4 d-none d-lg-block">
                     <div class="featured-img-wrapper">
-                      <img src="{{ testimonial.image_pic.url }}" class="featured-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="featured-img" alt="">
                     </div>
                   </div>
                 </div>
@@ -493,23 +504,24 @@
               <i class="bi bi-translate"></i> Language & Customs
             </li>
             <li data-filter=".filter-photography">
-              <i class="bi bi-house"></i>Fuliru Kingdom
+              <i class="bi bi-house"></i>Vira Kingdom
             </li>
             <li data-filter=".filter-marketing">
-              <i class="bi bi-house"></i>Vira Kingdom
+              <i class="bi bi-house"></i>Fuliiru Kingdom
             </li>
           </ul>
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/nami_img/art.png' %}" class="img-fluid" alt="" loading="lazy">
+                  {% for artSociety in galleryArtSociety %}
+                  <img src="{{ artSociety.image.url }}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">Art & Society</div>
-                      <h3 class="entry-title">The Dancing of our society</h3>
+                      <div class="entry-meta">{{ artSociety.title }}</div>
+                      <h3 class="entry-title">{{ artSociety.subtile }}</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/nami_img/art.png'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Art & Society; description: Praesent commodo cursus magna, vel scelerisque nisl consectetur.">
+                        <a href="{{ artSociety.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ artSociety.description }}">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
                         <a href="portfolio-details"> <!-- lien pour portofolio -->
@@ -518,6 +530,7 @@
                       </div>
                     </div>
                   </div>
+                  {% endfor %}
                 </figure>
               </article>
             </div><!-- End Portfolio Item -->
@@ -525,43 +538,23 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/nami_img/society.jpg'%}" class="img-fluid" alt="" loading="lazy">
+                  {% for languageCust in languageCusts %}
+                  <img src="{{ languageCust.image.url }}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">Development</div>
-                      <h3 class="entry-title">Education</h3>
+                      <div class="entry-meta">{{ languageCust.title }}</div>
+                      <h3 class="entry-title">{{ languageCust.subtile }}</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/nami_img/society.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Development; description: Nulla vitae elit libero, a pharetra augue mollis interdum.">
+                        <a href="{{ languageCust.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ languageCust.description }}">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details">
+                        <a href="portfolio-details"> <!-- lien pour portofolio -->
                           <i class="bi bi-arrow-right"></i>
                         </a>
                       </div>
                     </div>
                   </div>
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-7.webp'%}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">Photography</div>
-                      <h3 class="entry-title">Urban Architecture</h3>
-                      <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-7.webp'%}" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Urban Architecture; description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem.">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details">
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </figure>
               </article>
             </div><!-- End Portfolio Item -->
@@ -569,65 +562,23 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-4.webp'%}" class="img-fluid" alt="" loading="lazy">
+                  {% for fuliruGallery in fuliruGallerys %}
+                  <img src="{{ fuliruGallery.image.url }}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">Marketing</div>
-                      <h3 class="entry-title">Social Media Campaign</h3>
+                      <div class="entry-meta">{{ fuliruGallery.title }}</div>
+                      <h3 class="entry-title">{{ fuliruGallery.subtile }}</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-4.webp'%}" class="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Social Media Campaign; description: Quis autem vel eum iure reprehenderit qui in ea voluptate.">
+                        <a href="{{ fuliruGallery.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ fuliruGallery.description }}">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details">
+                        <a href="portfolio-details"> <!-- lien pour portofolio -->
                           <i class="bi bi-arrow-right"></i>
                         </a>
                       </div>
                     </div>
                   </div>
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  <img src="{% static 'assets/nami_img/art.png'%}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">Art & Society</div>
-                      <h3 class="entry-title">Other activities</h3>
-                      <div class="entry-links">
-                        <a href="{% static 'assets/nami_img/art.png'%}" class="glightbox" data-gallery="portfolio-gallery-ui" data-glightbox="title: Art & Society; description: Other activities">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details">
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  <img src="{% static 'assets/nami_img/fulirukingdom.jpg'%}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">Development</div>
-                      <h3 class="entry-title">Cloud Management System</h3>
-                      <div class="entry-links">
-                        <a href="{% static 'assets/nami_img/fulirukingdom.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-development" data-glightbox="title: Cloud Management System; description: Temporibus autem quibusdam et aut officiis debitis.">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details">
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </figure>
               </article>
             </div><!-- End Portfolio Item -->
@@ -635,43 +586,23 @@
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  <img src="{% static 'assets/nami_img/virakingdom.jpg'%}" class="img-fluid" alt="" loading="lazy">
+                  {% for viraGallery in viraGallerys %}
+                  <img src="{{ viraGallery.image.url }}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">Photography</div>
-                      <h3 class="entry-title">Nature Collection</h3>
+                      <div class="entry-meta">{{ viraGallery.title }}</div>
+                      <h3 class="entry-title">{{ viraGallery.subtile }}</h3>
                       <div class="entry-links">
-                        <a href="{% static 'assets/nami_img/virakingdom.jpg'%}" class="glightbox" data-gallery="portfolio-gallery-photography" data-glightbox="title: Nature Collection; description: Integer posuere erat a ante venenatis dapibus posuere velit aliquet.">
+                        <a href="{{ viraGallery.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ viraGallery.description }}">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details">
+                        <a href="portfolio-details"> <!-- lien pour portofolio -->
                           <i class="bi bi-arrow-right"></i>
                         </a>
                       </div>
                     </div>
                   </div>
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  <img src="{% static 'assets/img/portfolio/portfolio-5.webp'%}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">Marketing</div>
-                      <h3 class="entry-title">Brand Strategy</h3>
-                      <div class="entry-links">
-                        <a href="{% static 'assets/img/portfolio/portfolio-5.webp'%}" class="glightbox" data-gallery="portfolio-gallery-marketing" data-glightbox="title: Brand Strategy; description: Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum.">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details">
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+                  {% endfor %}
                 </figure>
               </article>
             </div><!-- End Portfolio Item -->
@@ -700,7 +631,7 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="team-member d-flex">
               <div class="member-img">
-                <img src="{{team.image_pic.url}}" class="img-fluid" alt="" loading="lazy">
+                <img src="{{team.image_pic.url}}" oncontextmenu="return false;" draggable="false" class="img-fluid" alt="" loading="lazy">
               </div>
               <div class="member-info flex-grow-1">
                 <h4>{{team.name}}</h4>
