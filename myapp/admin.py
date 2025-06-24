@@ -14,7 +14,7 @@ from .models import(
                     ArtSocietyModel,
                     LanguageCustomsModel,
                     FuliruGalleyModel,
-                    ViraGalleyModel)
+                    ViraGalleyModel, ContactModel,SuggestModel)
 # Register your models here.
 admin.site.register(Feature)
 admin.site.register(Produit)
@@ -31,3 +31,5 @@ admin.site.register(ArtSocietyModel)
 admin.site.register(LanguageCustomsModel)
 admin.site.register(FuliruGalleyModel)
 admin.site.register(ViraGalleyModel)
+admin.site.register(ContactModel)
+admin.site.register(SuggestModel)

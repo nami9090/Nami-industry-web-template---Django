@@ -23,16 +23,21 @@ from .forms import ProduitForm, SuggestForm
 
 # Create your views here.
 def index(request):
+    success = False
     if request.method == 'POST':
-        forms = SuggestForm(request.POST)
-        if forms.is_valid():
-            print(forms)
+       form = SuggestForm(request.POST)
+       if form.is_valid():
+           form.save()
+           success = True
+    else:
+        form = SuggestForm()
+        success = False
+
     features = Feature.objects.all()
     elements = More_Culture.objects.all()
     steps = StepModel.objects.all()
     testimonials = TestimonialModel.objects.all()
     teams = TeamModel.objects.all()
-
     locations = LocationModel.objects.all()
     emails = EmailModel.objects.all()
     works_hours = HourOfOperation.objects.all()
@@ -41,22 +46,24 @@ def index(request):
     languageCusts =  LanguageCustomsModel.objects.all()
     fuliruGallerys = FuliruGalleyModel.objects.all()
     viraGallerys = ViraGalleyModel.objects.all()
-    return render(request, 'index.html', 
-                  {
-                      'features':features, 
-                      'elements':elements, 
-                      'steps':steps, 
-                      'testimonials':testimonials,
-                      'teams': teams,
-                      'locations':locations,
-                      'emails':emails,
-                      'works_hours':works_hours,
-                      'aboutImages':aboutImages,
-                      'galleryArtSociety':galleryArtSociety,
-                      'languageCusts':languageCusts,
-                      'fuliruGallerys':fuliruGallerys,
-                      'viraGallerys':viraGallerys
-                      })
+
+    context = {
+        'success':success,
+        'features':features, 
+        'elements':elements, 
+        'steps':steps, 
+        'testimonials':testimonials,
+        'teams': teams,
+        'locations':locations,
+        'emails':emails,
+        'works_hours':works_hours,
+        'aboutImages':aboutImages,
+        'galleryArtSociety':galleryArtSociety,
+        'languageCusts':languageCusts,
+        'fuliruGallerys':fuliruGallerys,
+        'viraGallerys':viraGallerys
+    }
+    return render(request, 'index.html',context)
 
 def counter(request):
     # text = request.POST['text']
@@ -69,7 +76,16 @@ def portfolio(request):
 
 def service(request, pk):
     feature = Feature.objects.get(id=pk)
-    return render(request, 'service-details.html', {'feature':feature})
+    locations = LocationModel.objects.all()
+    emails = EmailModel.objects.all()
+    features = Feature.objects.all()
+    context = {
+        'feature':feature,
+        'locations':locations,
+        'emails':emails,
+        'features':features
+    }
+    return render(request, 'service-details.html', context)
 
 def register(request):
     if request.method == 'POST':

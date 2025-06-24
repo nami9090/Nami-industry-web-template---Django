@@ -49,6 +49,8 @@ class SuggestModel(models.Model):
     email = models.CharField(max_length=100)
     subject = models.CharField(max_length=1000)
     message = models.CharField(max_length=1000000)
+    def __str__(self):
+        return self.name
 
 class AddressModel(models.Model):
     location_address = models.CharField(max_length=1000)
@@ -94,3 +96,10 @@ class ViraGalleyModel(models.Model):
     subtile = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     image = models.ImageField(upload_to='images/')
+
+class ContactModel(models.Model):
+    first_name = models.CharField(max_length=100)
+    email_address = models.EmailField(blank=False)
+    subject = models.CharField(max_length=100)
+    write_message = models.CharField(max_length=1000)
+
