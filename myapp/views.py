@@ -79,11 +79,23 @@ def service(request, pk):
     locations = LocationModel.objects.all()
     emails = EmailModel.objects.all()
     features = Feature.objects.all()
+    galleryArtSociety = ArtSocietyModel.objects.all()
+    languageCusts =  LanguageCustomsModel.objects.all()
+    fuliruGallerys = FuliruGalleyModel.objects.all()
+    viraGallerys = ViraGalleyModel.objects.all()
+    elements = More_Culture.objects.all()
+    emails = EmailModel.objects.all()
     context = {
         'feature':feature,
         'locations':locations,
         'emails':emails,
-        'features':features
+        'features':features,
+        'artGallery':galleryArtSociety,
+        'language':languageCusts,
+        'fuliru':fuliruGallerys,
+        'vira':viraGallerys,
+        'element':elements,
+        'emails':emails
     }
     return render(request, 'service-details.html', context)
 
@@ -149,3 +161,11 @@ def produit_viz(request):
 def more_culture(request):
     elements = More_Culture.objects.all()
     return render(request,'index.html', {'elements':elements})
+
+def starter_page(request):
+    return render(request, 'starter-page.html')
+
+from django.shortcuts import render
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)

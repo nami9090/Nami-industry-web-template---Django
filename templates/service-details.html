@@ -94,7 +94,9 @@
                 <p class="lead">
                   Founding members (see definition in the bylaws) pay a membership fee of $200 with the application of membership. This fee gives proof that the member understands the importance of the project and is determined to preserve and conserve the Fuliiru-Vira heritage at all cost. The regular members are subject to rules and regulations of contributions (monthly or annual) set forth in the bylaws of NAFV Int.
                 </p>
-                <a class="btn-getstarted" href="/#contact">Donate</a>
+                <button>
+                  <a class="btn-getstarted" href="/#contact">Donate</a>
+                </button>
               </div>
 
               <div class="service-tabs" data-aos="fade-up" data-aos-delay="200">
@@ -120,6 +122,7 @@
 
                   <div class="tab-pane fade show active" id="service-details-tab-1" role="tabpanel" aria-labelledby="overview-tab">
                     <div class="row">
+                      <!--OVERVIEW-->
                       <div class="col-md-6">
                         <div class="content-block">
                           <h3>{{feature.name}}</h3>
@@ -134,6 +137,7 @@
 
                   <div class="tab-pane fade" id="service-details-tab-2" role="tabpanel" aria-labelledby="process-tab">
                     <div class="process-timeline">
+                      <!--PROCESS TAB-->
                       <div class="timeline-item">
                         <div class="timeline-marker">01</div>
                         <div class="timeline-content">
@@ -142,41 +146,19 @@
                         </div>
                       </div>
 
-                      <div class="timeline-item">
-                        <div class="timeline-marker">02</div>
-                        <div class="timeline-content">
-                          <h4>Strategy Development</h4>
-                          <p>Creating comprehensive marketing strategies tailored to your specific business objectives and target demographics.</p>
-                        </div>
-                      </div>
-
-                      <div class="timeline-item">
-                        <div class="timeline-marker">03</div>
-                        <div class="timeline-content">
-                          <h4>Implementation</h4>
-                          <p>Executing the marketing plan across various channels with precise targeting and creative content delivery.</p>
-                        </div>
-                      </div>
-
-                      <div class="timeline-item">
-                        <div class="timeline-marker">04</div>
-                        <div class="timeline-content">
-                          <h4>Analysis &amp; Optimization</h4>
-                          <p>Continuous monitoring, data analysis, and strategy refinement to maximize ROI and campaign effectiveness.</p>
-                        </div>
-                      </div>
                     </div>
                   </div>
 
                   <div class="tab-pane fade" id="service-details-tab-3" role="tabpanel" aria-labelledby="benefits-tab">
+                    <!--BENEFITS-->
                     <div class="row g-4">
                       <div class="col-md-6">
                         <div class="benefit-card">
                           <div class="benefit-icon">
                             <i class="bi bi-graph-up"></i>
                           </div>
-                          <h4>Increased Brand Visibility</h4>
-                          <p>Expand your digital footprint and reach more potential customers through targeted marketing efforts.</p>
+                          <h4>Work-on</h4>
+                          <p>Waiting...</p>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -184,8 +166,8 @@
                           <div class="benefit-icon">
                             <i class="bi bi-people"></i>
                           </div>
-                          <h4>Higher Engagement Rates</h4>
-                          <p>Create meaningful connections with your audience through relevant and compelling content strategies.</p>
+                          <h4>Work-on</h4>
+                          <p>Waiting...</p>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -193,8 +175,8 @@
                           <div class="benefit-icon">
                             <i class="bi bi-cash-coin"></i>
                           </div>
-                          <h4>Improved ROI</h4>
-                          <p>Maximize your marketing budget with data-driven campaigns that deliver measurable results.</p>
+                          <h4>Work-on</h4>
+                          <p>Waiting...</p>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -202,8 +184,8 @@
                           <div class="benefit-icon">
                             <i class="bi bi-bar-chart-line"></i>
                           </div>
-                          <h4>Data-Driven Decisions</h4>
-                          <p>Make informed marketing choices based on comprehensive analytics and performance metrics.</p>
+                          <h4>Work-on</h4>
+                          <p>Waiting...</p>
                         </div>
                       </div>
                     </div>
@@ -212,7 +194,7 @@
               </div>
 
               <div class="service-gallery" data-aos="fade-up" data-aos-delay="300">
-                <h3>Our Marketing Portfolio</h3>
+                <h3>{{feature.name}} Gallery</h3>
                 <div class="service-details-slider swiper init-swiper">
                   <script type="application/json" class="swiper-config">
                     {
@@ -236,40 +218,64 @@
                     }
                   </script>
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="portfolio-item">
-                        <img src="{% static 'assets/img/services/services-2.webp'%}" alt="" class="img-fluid" loading="lazy">
-                        <div class="portfolio-info">
-                          <h5>Social Media Campaign</h5>
-                          <p>Increased engagement by 187%</p>
+                    {% for element in artGallery %}
+                      {% if feature.name == element.title %}
+                        <div class="swiper-slide">
+                          <div class="portfolio-item">
+                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
+                            <div class="portfolio-info">
+                              <h5>{{ element.title }}</h5>
+                              <p>{{ element.description }}</p>
+                            </div>
+                          </div>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                    {% for element in language %}
+                      {% if feature.name == element.title %}
+                      <div class="swiper-slide">
+                        <div class="portfolio-item">
+                          <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
+                          <div class="portfolio-info">
+                            <h5>{{ element.title }}</h5>
+                            <p>{{ element.description }}</p>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="portfolio-item">
-                        <img src="{% static 'assets/img/services/services-4.webp'%}" alt="" class="img-fluid" loading="lazy">
-                        <div class="portfolio-info">
-                          <h5>SEO Optimization</h5>
-                          <p>Ranked #1 for target keywords</p>
+                      {% endif %}
+                    {% endfor %}
+                    {% for element in fuliru %}
+                      {% if feature.name == element.title %}
+                        <div class="swiper-slide">
+                          <div class="portfolio-item">
+                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
+                            <div class="portfolio-info">
+                              <h5>{{ element.title }}</h5>
+                              <p>{{ element.description }}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="portfolio-item">
-                        <img src="{% static 'assets/img/services/services-10.webp'%}" alt="" class="img-fluid" loading="lazy">
-                        <div class="portfolio-info">
-                          <h5>Content Marketing</h5>
-                          <p>200% increase in organic traffic</p>
+                      {% endif %}
+                    {% endfor %}
+                    {% for element in vira %}
+                      {% if feature.name == element.title %}
+                        <div class="swiper-slide">
+                          <div class="portfolio-item">
+                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
+                            <div class="portfolio-info">
+                              <h5>{{ element.title }}</h5>
+                              <p>{{ element.description }}</p>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
+                      {% endif %}
+                    {% endfor %}
                   </div>
                   <div class="swiper-pagination"></div>
                 </div>
               </div>
             </div>
           </div>
-
           <div class="col-lg-4 order-lg-2 order-1">
 
             <div class="service-sidebar" data-aos="fade-left">
@@ -286,42 +292,42 @@
                   <li>
                     <i class="bi bi-megaphone"></i>
                     <div>
-                      <h5>Social Media Marketing</h5>
-                      <p>Strategic presence across all relevant platforms</p>
+                      <h5>Working-on</h5>
+                      <p>Comming soon</p>
                     </div>
                   </li>
                   <li>
                     <i class="bi bi-search"></i>
                     <div>
-                      <h5>SEO Optimization</h5>
-                      <p>Improve your search engine rankings</p>
+                      <h5>Working-on</h5>
+                      <p>Comming soon</p>
                     </div>
                   </li>
                   <li>
                     <i class="bi bi-newspaper"></i>
                     <div>
-                      <h5>Content Marketing</h5>
-                      <p>Engaging content that converts visitors</p>
+                      <h5>Working-on</h5>
+                      <p>Comming soon</p>
                     </div>
                   </li>
                   <li>
                     <i class="bi bi-envelope-paper"></i>
                     <div>
-                      <h5>Email Campaigns</h5>
-                      <p>Targeted email marketing strategies</p>
+                      <h5>Working-on</h5>
+                      <p>Comming soon</p>
                     </div>
                   </li>
                   <li>
                     <i class="bi bi-graph-up-arrow"></i>
                     <div>
-                      <h5>Analytics &amp; Reporting</h5>
-                      <p>Comprehensive performance tracking</p>
+                      <h5>Working-on</h5>
+                      <p>Comming soon</p>
                     </div>
                   </li>
                 </ul>
               </div>
 
-              <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+              <!--<div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                 <div class="testimonial-header">
                   <i class="bi bi-quote"></i>
                   <div class="rating">
@@ -342,7 +348,7 @@
                     <span>CEO, TechSolutions Inc.</span>
                   </div>
                 </div>
-              </div>
+              </div>-->
 
               <div class="contact-info" data-aos="fade-up" data-aos-delay="400">
                 <h4>Have Questions?</h4>
@@ -350,14 +356,15 @@
                   <i class="bi bi-telephone-fill"></i>
                   <div>
                     <span>Call Us Now</span>
-                    <p>+1 (803) 952-3845</p>
+                    <p>+1 817 881 2876</p>
                   </div>
                 </div>
                 <div class="contact-method">
                   <i class="bi bi-envelope-fill"></i>
                   <div>
-                    <span>Email Us</span>
-                    <p>marketing@example.com</p>
+                    {% for email in emails %}
+                    <p><strong>Email Us</strong> <span> <a href="mailto:"{{ email.email_address }}>{{ email.email_address }}</a></span></p>
+                    {% endfor %}
                   </div>
                 </div>
               </div>
