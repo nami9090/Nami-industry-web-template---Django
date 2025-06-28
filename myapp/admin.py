@@ -10,11 +10,7 @@ from .models import(
                     LocationModel, 
                     EmailModel, 
                     HourOfOperation,
-                    AboutImageModel,
-                    ArtSocietyModel,
-                    LanguageCustomsModel,
-                    FuliruGalleyModel,
-                    ViraGalleyModel, ContactModel,SuggestModel)
+                    AboutImageModel,ContactModel,SuggestModel, Galleries, GalleryImages)
 # Register your models here.
 admin.site.register(Feature)
 admin.site.register(Produit)
@@ -27,9 +23,7 @@ admin.site.register(LocationModel)
 admin.site.register(EmailModel)
 admin.site.register(HourOfOperation)
 admin.site.register(AboutImageModel)
-admin.site.register(ArtSocietyModel)
-admin.site.register(LanguageCustomsModel)
-admin.site.register(FuliruGalleyModel)
-admin.site.register(ViraGalleyModel)
 admin.site.register(ContactModel)
 admin.site.register(SuggestModel)
+admin.site.register(Galleries)
+admin.site.register(GalleryImages)

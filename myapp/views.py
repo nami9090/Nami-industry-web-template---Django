@@ -14,10 +14,7 @@ from .models import (
                     EmailModel, 
                     HourOfOperation, 
                     AboutImageModel,
-                    ArtSocietyModel, 
-                    LanguageCustomsModel, 
-                    FuliruGalleyModel, 
-                    ViraGalleyModel)
+                    Galleries, GalleryImages)
 from .forms import ProduitForm, SuggestForm
 
 
@@ -42,10 +39,8 @@ def index(request):
     emails = EmailModel.objects.all()
     works_hours = HourOfOperation.objects.all()
     aboutImages = AboutImageModel.objects.all()
-    galleryArtSociety = ArtSocietyModel.objects.all()
-    languageCusts =  LanguageCustomsModel.objects.all()
-    fuliruGallerys = FuliruGalleyModel.objects.all()
-    viraGallerys = ViraGalleyModel.objects.all()
+    galleryInfos = Galleries.objects.all()
+    galleryImage = GalleryImages.objects.all()
 
     context = {
         'success':success,
@@ -58,10 +53,9 @@ def index(request):
         'emails':emails,
         'works_hours':works_hours,
         'aboutImages':aboutImages,
-        'galleryArtSociety':galleryArtSociety,
-        'languageCusts':languageCusts,
-        'fuliruGallerys':fuliruGallerys,
-        'viraGallerys':viraGallerys
+
+        'galleryInfos': galleryInfos,
+        'galleryImage': galleryImage
     }
     return render(request, 'index.html',context)
 
@@ -71,29 +65,32 @@ def counter(request):
     posts = [1,2,3,4,5,'tim','tom','johm']
     return render(request, 'counter.html', {'posts':posts})
 
-def portfolio(request):
-    return render(request, 'portfolio-details.html')
+def portfolio(request, pk):
+    galleryInfos = Galleries.objects.get(id=pk)
+    galleryImage = galleryInfos.images.all()
+    locations = LocationModel.objects.all()
+    emails = EmailModel.objects.all()
+    features = Feature.objects.all()
+    context = {
+        'galleryInfos': galleryInfos,
+        'galleryImage': galleryImage,
+        'locations':locations,
+        'emails':emails,
+        'features':features,
+    }
+    return render(request, 'portfolio-details.html', context)
 
 def service(request, pk):
     feature = Feature.objects.get(id=pk)
     locations = LocationModel.objects.all()
     emails = EmailModel.objects.all()
     features = Feature.objects.all()
-    galleryArtSociety = ArtSocietyModel.objects.all()
-    languageCusts =  LanguageCustomsModel.objects.all()
-    fuliruGallerys = FuliruGalleyModel.objects.all()
-    viraGallerys = ViraGalleyModel.objects.all()
     elements = More_Culture.objects.all()
-    emails = EmailModel.objects.all()
     context = {
         'feature':feature,
         'locations':locations,
         'emails':emails,
         'features':features,
-        'artGallery':galleryArtSociety,
-        'language':languageCusts,
-        'fuliru':fuliruGallerys,
-        'vira':viraGallerys,
         'element':elements,
         'emails':emails
     }

@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-y!9vfll!c1g2#k_j^k)99hri%n&x%eh(zn)x=108e#xuwvda#f
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     # 'nami-industry-web-template-django.onrender.com'

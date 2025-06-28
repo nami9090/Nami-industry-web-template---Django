@@ -69,12 +69,13 @@
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade">
       <div class="container position-relative">
-        <h1>Portfolio Details</h1>
-        <p>Esse dolorum voluptatum ullam est sint nemo et est ipsa porro placeat quibusdam quia assumenda numquam molestias.</p>
+
+        <h1>{{ galleryInfos.title }}</h1>
+        <p>{{ galleryInfos.subtitle }}</p>
         <nav class="breadcrumbs">
           <ol>
             <li><a href="/">Home</a></li>
-            <li class="current">Portfolio Details</li>
+            <li class="current">Gallery Details</li>
           </ol>
         </nav>
       </div>
@@ -115,15 +116,17 @@
                     }
                   </script>
                   <div class="swiper-wrapper">
+                    {% for img in galleryImage %}
                     <div class="swiper-slide">
-                      <img src="{% static 'assets/img/portfolio/portfolio-5.webp'%}" alt="Portfolio Image" class="img-fluid">
+                      <img src="{{ img.image.url }}" alt="Portfolio Image" class="img-fluid">
                     </div>
-                    <div class="swiper-slide">
+                    {% endfor %}
+                    <!--<div class="swiper-slide">
                       <img src="{% static 'assets/img/portfolio/portfolio-7.webp'%}" alt="Portfolio Image" class="img-fluid">
                     </div>
                     <div class="swiper-slide">
                       <img src="{% static 'assets/img/portfolio/portfolio-8.webp'%}" alt="Portfolio Image" class="img-fluid">
-                    </div>
+                    </div>-->
                   </div>
                   <div class="swiper-button-prev"></div>
                   <div class="swiper-button-next"></div>
@@ -132,32 +135,25 @@
 
               <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
                 <div class="row g-2 mt-3">
+                  {% for img in galleryImage %}
                   <div class="col-3">
-                    <img src="{% static 'assets/img/portfolio/portfolio-4.webp' %}" alt="Gallery Image" class="img-fluid glightbox">
+                    <img src="{{ img.image.url }}" alt="{{ img.description }}" class="img-fluid glightbox">
                   </div>
-                  <div class="col-3">
-                    <img src="{% static 'assets/img/portfolio/portfolio-6.webp' %}" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                  <div class="col-3">
-                    <img src="{% static 'assets/img/portfolio/portfolio-11.webp' %}" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
-                  <div class="col-3">
-                    <img src="{% static 'assets/img/portfolio/portfolio-12.webp' %}" alt="Gallery Image" class="img-fluid glightbox">
-                  </div>
+                  {% endfor %}
                 </div>
               </div>
 
-              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+              <!--<div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
                 <span>Angular</span>
                 <span>Express.js</span>
                 <span>PostgreSQL</span>
                 <span>GraphQL</span>
                 <span>Firebase</span>
-              </div>
+              </div>-->
             </div>
           </div>
 
-          <div class="col-lg-6" data-aos="fade-left">
+          <!--<div class="col-lg-6" data-aos="fade-left">
             <div class="portfolio-details-content">
               <div class="project-meta">
                 <div class="badge-wrapper">
@@ -257,7 +253,7 @@
           </div>
         </div>
 
-      </div>
+      </div>-->
 
     </section><!-- /Portfolio Details Section -->
 
@@ -268,10 +264,10 @@
     <div class="container footer-top">
       <div class="row gy-4">
         <div class="col-lg-5 col-md-12 footer-about">
-          <a href="/" class="logo d-flex align-items-center">
-            <span class="sitename">Strategy</span>
+          <a href="index" class="logo d-flex align-items-center">
+            <span class="sitename">North America Fuliru Vira virtual Museum</span>
           </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+          <p>Inspiring younger Benebuvira generation through the power of cultural artifacts. The NAFV museum thrives to enriche the Benebuvira community around the world by collecting, preserving, and making accessible outstanding works of art from the Fuliiru and Vira cultures.</p>
           <div class="social-links d-flex mt-4">
             <a href=""><i class="bi bi-twitter-x"></i></a>
             <a href=""><i class="bi bi-facebook"></i></a>
@@ -286,36 +282,37 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">About us</a></li>
             <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Teams</a></li>
+            <li><a href="#">Contact</a></li>
           </ul>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            {% for feature in features %}
+            <li><a href="#">{{ feature.name }}</a></li>
+            {% endfor %}
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-          <h4>Contact Us</h4>
-          <p>A108 Adam Street</p>
-          <p>New York, NY 535022</p>
-          <p>United States</p>
-          <p class="mt-4"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-          <p><strong>Email:</strong> <span>info@example.com</span></p>
+          {% for location in locations %}
+          <h4>{{location.location_name}}</h4>
+          <p>{{location.location}}</p>
+          {% endfor %}
+          <p class="mt-4"><strong>Phone:</strong> <span>+1 817 881 2876</span></p>
+          {% for email in emails %}
+          <p><strong>Email:</strong> <span> <a href="mailto:"{{ email.email_address }}>{{ email.email_address }}</a></span></p>
+          {% endfor %}
         </div>
 
       </div>
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Strategy</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">NAFUV</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->

@@ -326,23 +326,17 @@
         <div class="row justify-content-center">
           {% for feature in features %}
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-card position-relative z-1">
-              <div class="service-icon">
-                <i class="{{feature.icons}}"></i>
-              </div>
-              <div class="client-info d-flex align-items-center">
+             <div class="client-info d-flex align-items-center">
                   <img src="{{ feature.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="img-fluid" alt="{{ feature.name }}" loading="lazy">
               </div>
-              <a href="service-details/{{feature.id}}" class="card-action d-flex align-items-center justify-content-center rounded-circle">
-                <i class="bi bi-arrow-up-right"></i>
-              </a>
+            <div class="service-card position-relative z-1">
               <h3>
                 <a href="service-details/{{feature.id}}">
                    {{ feature.name }}
                 </a>
               </h3>
               <p>
-                {{ feature.details }}
+                {{ feature.details | truncatewords:15 }}
               </p>
             </div>
           </div>
@@ -369,7 +363,7 @@
                 <i class="{{ step.step_icon }}"></i>
               </div>
               <div class="step-info">
-                <span class="step-number">{{step.step_number}}</span>
+                <!--<span class="step-number">{{step.step_number}}</span>-->
                 <h3>{{step.title}}</h3>
                 <p>{{ step.description}}</p>
               </div>
@@ -398,7 +392,7 @@
               "loop": true,
               "speed": 600,
               "autoplay": {
-                "delay": 5000
+                "delay": 10000
               },
               "navigation": {
                 "nextEl": ".swiper-button-next",
@@ -459,116 +453,31 @@
             <li data-filter="*" class="filter-active">
               <i class="bi bi-grid-3x3"></i> All Projects
             </li>
-            <li data-filter=".filter-ui">
-              <i class="bi bi-brush"></i> Art & Society
-            </li>
-            <li data-filter=".filter-development">
-              <i class="bi bi-translate"></i> Language & Customs
-            </li>
-            <li data-filter=".filter-photography">
-              <i class="bi bi-house"></i>Vira Kingdom
-            </li>
-            <li data-filter=".filter-marketing">
-              <i class="bi bi-house"></i>Fuliiru Kingdom
-            </li>
           </ul>
           <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+            {% for gallery in galleryInfos %}
             <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-ui">
               <article class="portfolio-entry">
                 <figure class="entry-image">
-                  {% for artSociety in galleryArtSociety %}
-                  <img src="{{ artSociety.image.url }}" class="img-fluid" alt="" loading="lazy">
+                  <img src="{{ gallery.image.url }}" class="img-fluid" alt="" loading="lazy">
                   <div class="entry-overlay">
                     <div class="overlay-content">
-                      <div class="entry-meta">{{ artSociety.title }}</div>
-                      <h3 class="entry-title">{{ artSociety.subtile }}</h3>
+                      <div class="entry-meta">{{ gallery.title }}</div>
+                      <h3 class="entry-title">{{ gallery.subtile }}</h3>
                       <div class="entry-links">
-                        <a href="{{ artSociety.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ artSociety.description }}">
+                        <a href="{{ gallery.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ gallery.description }}">
                           <i class="bi bi-arrows-angle-expand"></i>
                         </a>
-                        <a href="portfolio-details"> <!-- lien pour portofolio -->
+                        <a href="portfolio-details/{{ gallery.id }}">
                           <i class="bi bi-arrow-right"></i>
                         </a>
                       </div>
                     </div>
                   </div>
-                  {% endfor %}
                 </figure>
               </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-development">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  {% for languageCust in languageCusts %}
-                  <img src="{{ languageCust.image.url }}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">{{ languageCust.title }}</div>
-                      <h3 class="entry-title">{{ languageCust.subtile }}</h3>
-                      <div class="entry-links">
-                        <a href="{{ languageCust.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ languageCust.description }}">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details"> <!-- lien pour portofolio -->
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-marketing">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  {% for fuliruGallery in fuliruGallerys %}
-                  <img src="{{ fuliruGallery.image.url }}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">{{ fuliruGallery.title }}</div>
-                      <h3 class="entry-title">{{ fuliruGallery.subtile }}</h3>
-                      <div class="entry-links">
-                        <a href="{{ fuliruGallery.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ fuliruGallery.description }}">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details"> <!-- lien pour portofolio -->
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-xl-3 col-lg-4 col-md-6 portfolio-item isotope-item filter-photography">
-              <article class="portfolio-entry">
-                <figure class="entry-image">
-                  {% for viraGallery in viraGallerys %}
-                  <img src="{{ viraGallery.image.url }}" class="img-fluid" alt="" loading="lazy">
-                  <div class="entry-overlay">
-                    <div class="overlay-content">
-                      <div class="entry-meta">{{ viraGallery.title }}</div>
-                      <h3 class="entry-title">{{ viraGallery.subtile }}</h3>
-                      <div class="entry-links">
-                        <a href="{{ viraGallery.image.url }}" class="glightbox" oncontextmenu="return false;" draggable="false" data-gallery="portfolio-gallery-ui" data-glightbox="title:{{ viraGallery.description }}">
-                          <i class="bi bi-arrows-angle-expand"></i>
-                        </a>
-                        <a href="portfolio-details"> <!-- lien pour portofolio -->
-                          <i class="bi bi-arrow-right"></i>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </figure>
-              </article>
-            </div><!-- End Portfolio Item -->
-
+            </div>
+            {% endfor %}
           </div><!-- End Portfolio Container -->
 
         </div>
