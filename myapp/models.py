@@ -1,11 +1,28 @@
 from django.db import models
+from datetime import date
 
 # Create your models here.
 class Feature(models.Model):
     name = models.CharField(max_length=100)
     icons = models.CharField(max_length=50)
-    details = models.CharField(max_length=500)
+    details = models.CharField(max_length=10000000)
     image_pic = models.ImageField(upload_to='images/')
+
+class FeatureDetails(models.Model):
+    feature = models.ForeignKey(Feature, related_name='detail', on_delete=models.CASCADE)
+    completeName = models.CharField(max_length=100)
+    yearOfTaken = models.DateField()
+    encore_vivant = models.BooleanField(default=False)
+    yearOfDeath = models.DateField(null=True, blank=True)
+    image = models.ImageField(upload_to='images/')
+    def __str__(self):
+        if self.encore_vivant:
+            annees = date.today().year - self.yearOfTaken.year
+            return f"{self.completeName}, au pouvoir depuis {self.yearOfTaken.year} ({annees} ans de règne)"
+        elif self.yearOfDeath:
+            return f"{self.completeName} de {self.yearOfTaken.year} à {self.yearOfDeath.year} soit {self.yearOfDeath.year - self.yearOfTaken.year} ans de règne"
+        else:
+            return f"{self.completeName}, au pouvoir depuis {self.yearOfTaken.year}"
 
 class Produit(models.Model):
     nom = models.CharField(max_length=1000)

@@ -82,6 +82,7 @@ def portfolio(request, pk):
 
 def service(request, pk):
     feature = Feature.objects.get(id=pk)
+    featureDetail = feature.detail.all()
     locations = LocationModel.objects.all()
     emails = EmailModel.objects.all()
     features = Feature.objects.all()
@@ -92,7 +93,8 @@ def service(request, pk):
         'emails':emails,
         'features':features,
         'element':elements,
-        'emails':emails
+        'emails':emails,
+        'featureDetail':featureDetail
     }
     return render(request, 'service-details.html', context)
 

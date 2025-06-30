@@ -86,17 +86,13 @@
             <div class="service-main-content">
               <div class="service-header" data-aos="fade-up">
                 <h1>North America Fuliiru Viira Virtual Museum</h1>
-                {% comment %} <div class="service-meta">
-                  <span><i class="bi bi-award"></i> Premium Service</span>
-                  <span><i class="bi bi-clock"></i> Since 2015</span>
-                  <span><i class="bi bi-star-fill"></i> 4.9/5 Rating</span>
-                </div> {% endcomment %}
                 <p class="lead">
                   Founding members (see definition in the bylaws) pay a membership fee of $200 with the application of membership. This fee gives proof that the member understands the importance of the project and is determined to preserve and conserve the Fuliiru-Vira heritage at all cost. The regular members are subject to rules and regulations of contributions (monthly or annual) set forth in the bylaws of NAFV Int.
                 </p>
                 <button>
                   <a class="btn-getstarted" href="/#contact">Donate</a>
                 </button>
+                <p></p>
               </div>
 
               <div class="service-tabs" data-aos="fade-up" data-aos-delay="200">
@@ -123,13 +119,13 @@
                   <div class="tab-pane fade show active" id="service-details-tab-1" role="tabpanel" aria-labelledby="overview-tab">
                     <div class="row">
                       <!--OVERVIEW-->
-                      <div class="col-md-6">
+                      <div class="col-md-8">
                         <div class="content-block">
                           <h3>{{feature.name}}</h3>
                           <p>{{ feature.details }}</p>
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-4">
                         <img src="{{feature.image_pic.url}}" alt="{{feature.name}}" class="img-fluid rounded">
                       </div>
                     </div>
@@ -138,14 +134,20 @@
                   <div class="tab-pane fade" id="service-details-tab-2" role="tabpanel" aria-labelledby="process-tab">
                     <div class="process-timeline">
                       <!--PROCESS TAB-->
+                      {% for item in featureDetail %}
                       <div class="timeline-item">
-                        <div class="timeline-marker">01</div>
+                        <div class="timeline-marker">{{ item.id }}</div>
                         <div class="timeline-content">
-                          <h4>Discovery &amp; Research</h4>
-                          <p>Thorough market analysis and competitor research to define your target audience and marketing goals.</p>
+                          <h4>{{ item.yearOfTaken | date:'Y' }} - {{ item.yearOfDeath | date:'Y' }}</h4>
+                          <img src="{{ item.image.url }}" alt="Image" width="240">
+                          <p>
+                            <li style="color: {% if item.encore_vivant %}green{% else %}gray{% endif %};">
+                            {{ item }}
+                            </li>
+                          </p>
                         </div>
                       </div>
-
+                      {% endfor %}
                     </div>
                   </div>
 
@@ -193,87 +195,7 @@
                 </div>
               </div>
 
-              <div class="service-gallery" data-aos="fade-up" data-aos-delay="300">
-                <h3>{{feature.name}} Gallery</h3>
-                <div class="service-details-slider swiper init-swiper">
-                  <script type="application/json" class="swiper-config">
-                    {
-                      "loop": true,
-                      "speed": 800,
-                      "autoplay": {
-                        "delay": 5000
-                      },
-                      "slidesPerView": 1,
-                      "spaceBetween": 30,
-                      "breakpoints": {
-                        "768": {
-                          "slidesPerView": 2
-                        }
-                      },
-                      "pagination": {
-                        "el": ".swiper-pagination",
-                        "type": "bullets",
-                        "clickable": true
-                      }
-                    }
-                  </script>
-                  <div class="swiper-wrapper">
-                    {% for element in artGallery %}
-                      {% if feature.name == element.title %}
-                        <div class="swiper-slide">
-                          <div class="portfolio-item">
-                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
-                            <div class="portfolio-info">
-                              <h5>{{ element.title }}</h5>
-                              <p>{{ element.description }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                    {% for element in language %}
-                      {% if feature.name == element.title %}
-                      <div class="swiper-slide">
-                        <div class="portfolio-item">
-                          <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
-                          <div class="portfolio-info">
-                            <h5>{{ element.title }}</h5>
-                            <p>{{ element.description }}</p>
-                          </div>
-                        </div>
-                      </div>
-                      {% endif %}
-                    {% endfor %}
-                    {% for element in fuliru %}
-                      {% if feature.name == element.title %}
-                        <div class="swiper-slide">
-                          <div class="portfolio-item">
-                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
-                            <div class="portfolio-info">
-                              <h5>{{ element.title }}</h5>
-                              <p>{{ element.description }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                    {% for element in vira %}
-                      {% if feature.name == element.title %}
-                        <div class="swiper-slide">
-                          <div class="portfolio-item">
-                            <img src="{{ element.image.url }}" alt="" class="img-fluid" loading="lazy">
-                            <div class="portfolio-info">
-                              <h5>{{ element.title }}</h5>
-                              <p>{{ element.description }}</p>
-                            </div>
-                          </div>
-                        </div>
-                      {% endif %}
-                    {% endfor %}
-                  </div>
-                  <div class="swiper-pagination"></div>
-                </div>
-              </div>
+  
             </div>
           </div>
           <div class="col-lg-4 order-lg-2 order-1">
