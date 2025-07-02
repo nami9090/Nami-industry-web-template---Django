@@ -18,4 +18,4 @@ urlpatterns = [
     path('starter', views.starter_page, name='starter')
     #
 ]
-handler404 = 'views.custom_404'
+handler404 = views.custom_404

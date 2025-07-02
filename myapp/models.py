@@ -6,7 +6,9 @@ class Feature(models.Model):
     name = models.CharField(max_length=100)
     icons = models.CharField(max_length=50)
     details = models.CharField(max_length=10000000)
+    iskingdom = models.BooleanField(default=True)
     image_pic = models.ImageField(upload_to='images/')
+    
 
 class FeatureDetails(models.Model):
     feature = models.ForeignKey(Feature, related_name='detail', on_delete=models.CASCADE)
@@ -23,6 +25,15 @@ class FeatureDetails(models.Model):
             return f"{self.completeName} de {self.yearOfTaken.year} à {self.yearOfDeath.year} soit {self.yearOfDeath.year - self.yearOfTaken.year} ans de règne"
         else:
             return f"{self.completeName}, au pouvoir depuis {self.yearOfTaken.year}"
+        
+class FeatureBenefit(models.Model):
+    feature = models.ForeignKey(Feature, related_name='benefit', on_delete=models.CASCADE)
+    iconStr = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    details = models.CharField(max_length=500)
+    def __str__(self):
+        return f"{self.title} benefit of {self.feature.name}"
+    
 
 class Produit(models.Model):
     nom = models.CharField(max_length=1000)

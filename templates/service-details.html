@@ -10,8 +10,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/museeLogo.png'%}" rel="icon">
-  <link href="{% static 'assets/img/museeLogo.png'%}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/museeLogo.png'%}" rel="icon" loading="lazy">
+  <link href="{% static 'assets/img/museeLogo.png'%}" rel="apple-touch-icon" loading="lazy">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -43,8 +43,6 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.webp" alt=""> -->
         <h1 class="sitename">NAFUV</h1>
       </a>
 
@@ -59,7 +57,7 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="/#about">Get Started</a>
+      <a class="btn-getstarted" href="/#contact">DONATE</a>
     </div>
   </header>
 
@@ -102,11 +100,13 @@
                       <i class="bi bi-info-circle"></i> Overview
                     </button>
                   </li>
+                  {% if feature.iskingdom %}
                   <li class="nav-item" role="presentation">
                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-2" type="button" role="tab" aria-controls="process" aria-selected="false">
-                      <i class="bi bi-diagram-3"></i> Process
+                      <i class="bi bi-diagram-3"></i> Royal bloodline
                     </button>
                   </li>
+                  {% endif %}
                   <li class="nav-item" role="presentation">
                     <button class="nav-link" data-bs-toggle="tab" data-bs-target="#service-details-tab-3" type="button" role="tab" aria-controls="benefits" aria-selected="false">
                       <i class="bi bi-graph-up-arrow"></i> Benefits
@@ -122,11 +122,11 @@
                       <div class="col-md-8">
                         <div class="content-block">
                           <h3>{{feature.name}}</h3>
-                          <p>{{ feature.details }}</p>
+                          <p style="text-align: justify" >{{ feature.details }}</p>
                         </div>
                       </div>
                       <div class="col-md-4">
-                        <img src="{{feature.image_pic.url}}" alt="{{feature.name}}" class="img-fluid rounded">
+                        <img src="{{feature.image_pic.url}}" alt="{{feature.name}}" class="img-fluid rounded" loading="lazy">
                       </div>
                     </div>
                   </div>
@@ -139,9 +139,9 @@
                         <div class="timeline-marker">{{ item.id }}</div>
                         <div class="timeline-content">
                           <h4>{{ item.yearOfTaken | date:'Y' }} - {{ item.yearOfDeath | date:'Y' }}</h4>
-                          <img src="{{ item.image.url }}" alt="Image" width="240">
+                          <img src="{{ item.image.url }}" alt="Image" width="240" loading="lazy">
                           <p>
-                            <li style="color: {% if item.encore_vivant %}green{% else %}gray{% endif %};">
+                            <li style="color: {% if item.encore_vivant %}green{% else %}red{% endif %};">
                             {{ item }}
                             </li>
                           </p>
@@ -154,42 +154,17 @@
                   <div class="tab-pane fade" id="service-details-tab-3" role="tabpanel" aria-labelledby="benefits-tab">
                     <!--BENEFITS-->
                     <div class="row g-4">
+                      {% for benefit in featureBenefit %}
                       <div class="col-md-6">
                         <div class="benefit-card">
                           <div class="benefit-icon">
-                            <i class="bi bi-graph-up"></i>
+                            <i class="{{ benefit.iconStr }}"></i>
                           </div>
-                          <h4>Work-on</h4>
-                          <p>Waiting...</p>
+                          <h4>{{ benefit }}</h4>
+                          <p>{{ benefit.details }}</p>
                         </div>
                       </div>
-                      <div class="col-md-6">
-                        <div class="benefit-card">
-                          <div class="benefit-icon">
-                            <i class="bi bi-people"></i>
-                          </div>
-                          <h4>Work-on</h4>
-                          <p>Waiting...</p>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="benefit-card">
-                          <div class="benefit-icon">
-                            <i class="bi bi-cash-coin"></i>
-                          </div>
-                          <h4>Work-on</h4>
-                          <p>Waiting...</p>
-                        </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="benefit-card">
-                          <div class="benefit-icon">
-                            <i class="bi bi-bar-chart-line"></i>
-                          </div>
-                          <h4>Work-on</h4>
-                          <p>Waiting...</p>
-                        </div>
-                      </div>
+                      {% endfor %}
                     </div>
                   </div>
                 </div>

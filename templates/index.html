@@ -10,8 +10,8 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/museeLogo.png'%}" rel="icon">
-  <link href="{% static 'assets/img/museeLogo.png'%}" rel="apple-touch-icon">
+  <link href="{% static 'assets/img/museeLogo.png'%}" rel="icon" loading="lazy">
+  <link href="{% static 'assets/img/museeLogo.png'%}" rel="apple-touch-icon" loading="lazy">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -43,9 +43,6 @@
     <div class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!--<img src="{% static 'assets/img/logo.webp' %}" alt="">-->
-        <!--<img src="{% static 'assets/nami_img/logo.png' %}" alt="">-->
         <h1 class="sitename">NAFUV</h1>
       </a>
 
@@ -65,11 +62,11 @@
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="#about">
+      <a class="btn-getstarted" href="#contact">
         {% if user.is_authenticated %}
-        Get Started, {{ user.username | upper }}
+        DONATE {{ user.username | upper }}
         {% else %}
-        Get Started
+        DONATE
         {% endif %}
       </a>
     </div>
@@ -111,7 +108,7 @@
             <div class="visual-content">
               <div class="fluid-shape">
                 <!--<img src="{% static 'assets/img/abstract/abstract-1.webp'%}" alt="Abstract Fluid Shape" class="fluid-img">-->
-                <img src="{% static 'assets/nami_img/logo1.png'%}" oncontextmenu="return false;" draggable="false" alt="Abstract Fluid Shape" class="fluid-img">
+                <img src="{% static 'assets/nami_img/logo1.png'%}" oncontextmenu="return false;" draggable="false" alt="Abstract Fluid Shape" class="fluid-img" loading="lazy">
               </div>
 
               <div class="stats-card">
@@ -410,7 +407,7 @@
                     <p>{{ testimonial.first_paragraph }}</p>
                     <p>{{testimonial.second_paragraph}}</p>
                     <div class="profile d-flex align-items-center">
-                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="profile-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="profile-img" alt="" loading="lazy">
                       <div class="profile-info">
                         <h3>{{testimonial.name}}</h3>
                         <span>{{testimonial.fonction}}</span>
@@ -419,7 +416,7 @@
                   </div>
                   <div class="col-lg-4 d-none d-lg-block">
                     <div class="featured-img-wrapper">
-                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="featured-img" alt="">
+                      <img src="{{ testimonial.image_pic.url }}" oncontextmenu="return false;" draggable="false" class="featured-img" alt="" loading="lazy">
                     </div>
                   </div>
                 </div>
@@ -795,10 +792,6 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">NAFUV</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
         Designed by <a href="www.nami-industry.com">Nami industry</a>
       </div>
     </div>

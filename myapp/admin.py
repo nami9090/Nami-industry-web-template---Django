@@ -15,7 +15,7 @@ from .models import(
                     SuggestModel, 
                     Galleries,
                     GalleryImages,
-                    FeatureDetails)
+                    FeatureDetails, FeatureBenefit)
 # Register your models here.
 admin.site.register(Feature)
 admin.site.register(Produit)
@@ -33,3 +33,4 @@ admin.site.register(SuggestModel)
 admin.site.register(Galleries)
 admin.site.register(GalleryImages)
 admin.site.register(FeatureDetails)
+admin.site.register(FeatureBenefit)
